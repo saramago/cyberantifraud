@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CyberAntifraud • PhD in Fraud Detection (Acquiring + Deep Learning)</title>
+  <meta name="description" content="Showcase of PhD work on acquiring fraud detection with deep learning: projects, publications, team, governance, ethics, and impact." />
+  <meta name="theme-color" content="#0f172a" />
+  <meta property="og:title" content="CyberAntifraud • PhD in Fraud Detection" />
+  <meta property="og:description" content="Projects, publications and impact of the PhD work applying AI to payments (acquiring)." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/og-cyberantifraud.png" />
+  <link rel="icon" href="assets/favicon.png" />
+  <style>
+    :root{
+      --bg:#ffffff; --fg:#0f172a; --sub:#334155; --muted:#64748b;
+      --brand:#0ea5e9; --brand-2:#22d3ee; --line:#e2e8f0; --card:#f8fafc;
+      --accent:#e2f3ff;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#0b1220; --fg:#e5eefc; --sub:#c6d0e5; --muted:#96a2bd; --line:#18243a; --card:#0f172a; --accent:#07233a;}
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Cantarell,'Helvetica Neue',Arial,sans-serif;color:var(--fg);background:var(--bg)}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin:auto;padding:0 1rem}
+    .skip{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip:focus{left:1rem;top:1rem;width:auto;height:auto;background:var(--accent);color:var(--fg);padding:.5rem .75rem;border-radius:.5rem;z-index:1000}
+    header{position:sticky;top:0;background:rgba(255,255,255,.8);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line);z-index:999}
+    @media (prefers-color-scheme: dark){ header{background:rgba(11,18,32,.8)}}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.75rem 0}
+    .brand{display:flex;align-items:center;gap:.75rem;font-weight:800;letter-spacing:.3px}
+    .logo{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:inline-block}
+    .nav ul{display:flex;flex-wrap:wrap;gap:.75rem;margin:0;padding:0;list-style:none}
+    .nav a{padding:.35rem .6rem;border-radius:.5rem;color:var(--fg)}
+    .nav a:hover{background:var(--accent);text-decoration:none}
+    .hero{padding:3.5rem 0 2.25rem;border-bottom:1px solid var(--line);background:
+      radial-gradient(1200px 400px at 50% -10%, var(--accent), transparent 60%)}
+    .hero h1{font-size:clamp(28px,4vw,44px);line-height:1.15;margin:.25rem 0}
+    .hero p{max-width:820px;color:var(--sub);margin:.75rem 0 1.25rem}
+    .tag{display:inline-block;font-size:.8rem;background:var(--card);border:1px solid var(--line);padding:.25rem .6rem;border-radius:999px;margin-right:.5rem;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem}
+    section{padding:2.25rem 0;border-bottom:1px solid var(--line)}
+    h2{font-size:clamp(22px,2.6vw,28px);margin:.25rem 0 1rem}
+    h3{font-size:1.05rem;margin:1rem 0 .35rem}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem}
+    .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-top:.5rem}
+    .kpi{padding:1rem;border:1px solid var(--line);border-radius:12px;background:var(--bg)}
+    .kpi .num{font-weight:800;font-size:1.4rem}
+    .list-clean{margin:.25rem 0 0 0;padding:0 0 0 1.1rem}
+    .toc{position:sticky;top:70px;align-self:start}
+    .pill{display:inline-block;border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:.25rem .6rem;color:var(--muted);font-size:.8rem;margin:.15rem .25rem .15rem 0}
+    .table{width:100%;border-collapse:collapse}
+    .table th,.table td{border-bottom:1px solid var(--line);padding:.6rem .5rem;text-align:left;vertical-align:top}
+    .table th{font-size:.9rem;color:var(--muted)}
+    .footer{padding:2rem 0;background:var(--card)}
+    .small{font-size:.92rem;color:var(--muted)}
+    .btn{display:inline-block;background:var(--fg);color:var(--bg);padding:.55rem .9rem;border-radius:10px;border:1px solid var(--line)}
+    .btn:hover{opacity:.9;text-decoration:none}
+    .badges img{height:30px;margin-right:.5rem;vertical-align:middle;opacity:.9}
+    .sr{position:absolute;width:1px;height:1px;margin:-1px;border:0;padding:0;white-space:nowrap;clip-path:inset(50%);clip:rect(0 0 0 0);overflow:hidden}
+    @media (max-width: 900px){ .grid{grid-template-columns:repeat(6,1fr)} .toc{display:none} }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <span class="logo" aria-hidden="true"></span>
+        <span>CyberAntifraud</span>
+      </div>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#facts">Facts & Figures</a></li>
+          <li><a href="#regulation">Regulation & Reports</a></li>
+          <li><a href="#team">Research Team</a></li>
+          <li><a href="#governance">Governance</a></li>
+          <li><a href="#labs">Labs & Innovation</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#pubs">Publications</a></li>
+          <li><a href="#society">Society</a></li>
+          <li><a href="#contacts">Contacts</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="hero">
+      <div class="container">
+        <span class="tag">PhD • Deep Learning • Payments (Acquiring)</span>
+        <span class="tag">False Positives & False Negatives</span>
+        <h1>AI for fraud detection in acquiring</h1>
+        <p>
+          This site showcases my PhD work focused on reducing false positives and false negatives in card-present and e‑commerce acquiring using Deep Learning, rigorous temporal validation, and LLM‑powered attack simulation. It includes projects, publications, governance, ethics, and impact.
+        </p>
+        <div style="display:flex;gap:.6rem;flex-wrap:wrap">
+          <a class="btn" href="#projects">See projects</a>
+          <a class="btn" href="#pubs" style="background:transparent;color:var(--fg)">See publications</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container grid">
+        <aside class="toc card" aria-label="Section menu">
+          <h3>Contents</h3>
+          <ul class="list-clean">
+            <li><a href="#about">About us</a></li>
+            <li><a href="#facts">Facts and Figures</a></li>
+            <li><a href="#regulation">Regulations and Activity Reports</a></li>
+            <li><a href="#team">Research team</a></li>
+            <li><a href="#governance">Governance</a></li>
+            <li><a href="#sab">Scientific Advisory Board</a></li>
+            <li><a href="#rmd">Research Management & Development</a></li>
+            <li><a href="#edi">Equality, Culture, Diversity & Inclusion</a></li>
+            <li><a href="#ethics">Research Ethics</a></li>
+            <li><a href="#sdg">Sustainable Development</a></li>
+            <li><a href="#work">Work with us</a></li>
+          </ul>
+        </aside>
+
+        <div class="grid" style="grid-column: span 9;">
+          <div class="card">
+            <h2>About us</h2>
+            <p>
+              <strong>CyberAntifraud</strong> is the umbrella for my PhD research (NOVA IMS) into merchant‑acquiring fraud prevention. The focus is to build robust deep learning methods to:
+            </p>
+            <ul class="list-clean">
+              <li>Detect sophisticated fraud patterns with strict temporal validation and drift control.</li>
+              <li>Reduce merchant friction and fraud loss by optimising the Precision–Recall trade‑off.</li>
+              <li>Simulate adversarial tactics with LLMs for robustness testing (fraud red‑teaming).</li>
+              <li>Operationalise pipelines across SAS/Oracle and Python/ML stacks.</li>
+            </ul>
+            <p class="small">Note: no sensitive data is disclosed; examples use synthetic or anonymised data.</p>
+          </div>
+
+          <div id="facts" class="card">
+            <h2>Facts & Figures</h2>
+            <div class="kpis">
+              <div class="kpi"><div class="num">1 TB</div><div class="small">Transactional data (Oracle/SAS)</div></div>
+              <div class="kpi"><div class="num">5+</div><div class="small">DL families evaluated (RNN/Transformer/MoE/Autoencoder/GNN)</div></div>
+              <div class="kpi"><div class="num">3</div><div class="small">Target papers (Survey • Methods • Results)</div></div>
+              <div class="kpi"><div class="num">Q1</div><div class="small">Survey publication target</div></div>
+            </div>
+          </div>
+
+          <div id="regulation" class="card">
+            <h2>Regulations and Activity reports</h2>
+            <p>
+              The project tracks PSD2/PSD3, RTS SCA, EBA Guidelines, GDPR, NIS2 and reports from professional bodies (e.g., ACFE). We produce internal briefings on ML impact (data, explainability, retention, audit).
+            </p>
+            <ul class="list-clean">
+              <li><strong>Internal briefings:</strong> <em>[placeholders: links/PDFs]</em></li>
+              <li><strong>Reg‑to‑ML mapping:</strong> requirements → data & metrics <em>[placeholder]</em></li>
+            </ul>
+          </div>
+
+          <div id="team" class="card">
+            <h2>Research team</h2>
+            <table class="table" aria-label="Research Team">
+              <thead><tr><th>Name</th><th>Role</th><th>Contact</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><strong>Paulo Saramago</strong></td>
+                  <td>Doctoral Researcher • Fraud & Deep Learning (Acquiring)</td>
+                  <td><a href="mailto:paulo@cyberantifraud.com">paulo@cyberantifraud.com</a></td>
+                </tr>
+                <tr>
+                  <td><em>[Supervisor]</em></td>
+                  <td>Scientific supervision</td>
+                  <td><em>[email]</em></td>
+                </tr>
+                <tr>
+                  <td><em>[Co‑supervisor]</em></td>
+                  <td>Methods/Infra</td>
+                  <td><em>[email]</em></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div id="governance" class="card">
+            <h2>Governance</h2>
+            <ul class="list-clean">
+              <li><strong>Steering</strong>: supervisors + fraud & compliance stakeholders.</li>
+              <li><strong>Reviews</strong>: quarterly checkpoints (metrics, drift, error cost).</li>
+              <li><strong>Change control</strong>: data/model versioning (MLflow/DVC).</li>
+            </ul>
+          </div>
+
+          <div id="sab" class="card">
+            <h2>Scientific Advisory Board</h2>
+            <ul class="list-clean">
+              <li><em>[Name • Affiliation • Role]</em></li>
+              <li><em>[Name • Affiliation • Role]</em></li>
+            </ul>
+          </div>
+
+          <div id="rmd" class="card">
+            <h2>Research Management and Development</h2>
+            <ul class="list-clean">
+              <li><strong>Data management</strong>: field catalog (MCC, device, geo, 3DS, etc.), PII segregation.</li>
+              <li><strong>Validation</strong>: blocked time‑series CV, rolling windows, ensembles & MoE.</li>
+              <li><strong>Ops</strong>: SAS ↔ Python pipelines, testing, observability, feature store.</li>
+            </ul>
+          </div>
+
+          <div id="edi" class="card">
+            <h2>Equality, Culture, Diversity, and Inclusion</h2>
+            <p>Commitment to non‑discrimination and bias assessment in models (auditability & fairness).</p>
+          </div>
+
+          <div id="ethics" class="card">
+            <h2>Research Ethics</h2>
+            <p><strong>Principles</strong>: data minimisation, legitimate anti‑fraud purpose, operational explainability,
+            explicit error‑cost evaluation (customer vs. risk), full documentation for audit.</p>
+          </div>
+
+          <div id="sdg" class="card">
+            <h2>Sustainable Development</h2>
+            <p>Reduce payment friction and fraud loss (economic impact) and improve green compute efficiency.</p>
+          </div>
+
+          <div id="work" class="card">
+            <h2>Work with us</h2>
+            <p>Open to academic/industry collaboration on:</p>
+            <span class="pill">Dataset shift & Drift</span>
+            <span class="pill">MoE for Fraud</span>
+            <span class="pill">GNN on merchant networks</span>
+            <span class="pill">LLM Red Teaming</span>
+            <span class="pill">Real‑time Explainability</span>
+            <p style="margin-top:.6rem">Contact: <a href="mailto:collab@cyberantifraud.com">collab@cyberantifraud.com</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="labs">
+      <div class="container">
+        <h2>Labs & Innovation</h2>
+        <div class="grid">
+          <div class="card" style="grid-column:span 6;">
+            <h3>Data Analytics Lab</h3>
+            <p>Feature engineering and cost‑aware metrics (precision/recall calibrated to €).</p>
+          </div>
+          <div class="card" style="grid-column:span 6;">
+            <h3>Information Systems & Analytics Lab</h3>
+            <p>Integrating SAS/Oracle with Python pipelines and data governance.</p>
+          </div>
+          <div class="card" style="grid-column:span 6;">
+            <h3>Innovation & Fraud Simulation Lab</h3>
+            <p>LLM‑generated attack scenarios and robustness evaluation.</p>
+          </div>
+          <div class="card" style="grid-column:span 6;">
+            <h3>Blockchain Lab</h3>
+            <p>Exploring on/off‑chain signals for transactional risk (where applicable).</p>
+          </div>
+          <div class="card" style="grid-column:span 6;">
+            <h3>Business Intelligence & Analytics Lab</h3>
+            <p>Operational dashboards (fraud, friction, net benefit).</p>
+          </div>
+          <div class="card" style="grid-column:span 6;">
+            <h3>Applied Economics & Analytics Lab</h3>
+            <p>Cost‑benefit models and decision policy optimisation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2>Projects</h2>
+
+        <article class="card">
+          <h3>CYBERANTIFRAUD — Reducing FP/FN in payments with Deep Learning</h3>
+          <p class="small">Duration: <em>[2025–2027]</em> • Funding: <em>[tbd]</em> • Website: <em>[link]</em></p>
+
+          <h4>About the Project</h4>
+          <p>
+            We design a hybrid architecture (e.g., Mixture‑of‑Experts using Transformers/RNNs/Autoencoders)
+            and a rigorous temporal validation protocol to reduce false positives (merchant friction) and false negatives (fraud loss).
+          </p>
+
+          <h4>Our Contribution</h4>
+          <ul class="list-clean">
+            <li>Composite <strong>contextual risk indicators</strong> (MCC, channel, device, geo).</li>
+            <li><strong>Merchant clustering</strong> and peer‑group thresholds.</li>
+            <li><strong>Adversarial simulation</strong> with LLMs for pre‑production robustness tests.</li>
+          </ul>
+
+          <h4>Partnership</h4>
+          <p><em>[University • Industry • Regulators • Tech partners]</em></p>
+
+          <h4>Funding</h4>
+          <ul class="list-clean">
+            <li>Programme: <em>[FCT/EU/Industrial]</em></li>
+            <li>Total: <em>[€]</em></li>
+          </ul>
+
+          <h4>NOVA IMS Team</h4>
+          <ul class="list-clean">
+            <li><strong>Paulo Saramago</strong> — Researcher/Doctoral Student</li>
+            <li><em>[Supervision]</em></li>
+          </ul>
+
+          <h4>News about the Project</h4>
+          <ul class="list-clean">
+            <li><em>[YYYY‑MM‑DD] Kickoff & cost‑metric definition</em></li>
+            <li><em>[YYYY‑MM‑DD] Temporal CV protocol published</em></li>
+          </ul>
+
+          <h4>Contribution to the SDGs</h4>
+          <p class="small">Economic efficiency (lower loss and friction), responsible innovation, and trust in digital payments.</p>
+        </article>
+
+        <article class="card" style="margin-top:1rem">
+          <h3>Fraud Attack Simulation (LLM) • Open‑source MVP</h3>
+          <p>
+            Public repository with LLM‑generated attack scenarios and a harness to test fraud classifiers: <em>[GitHub link]</em>.
+          </p>
+          <ul class="list-clean">
+            <li>Stratified adversarial prompt generator per channel.</li>
+            <li>Robustness metrics and canary tests before promoting models.</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="pubs">
+      <div class="container">
+        <h2>Publications</h2>
+        <table class="table" aria-label="Publications">
+          <thead><tr><th>Year</th><th>Title</th><th>Type</th><th>Link</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><em>[2025]</em></td>
+              <td>Survey: Deep Learning for Acquiring Fraud Detection — metrics, temporal validation and robustness</td>
+              <td>Paper (Q1 target)</td>
+              <td><em>[DOI/Preprint]</em></td>
+            </tr>
+            <tr>
+              <td><em>[2025]</em></td>
+              <td>Methods: Time‑series CV protocol and error‑cost modelling</td>
+              <td>Paper</td>
+              <td><em>[DOI/Preprint]</em></td>
+            </tr>
+            <tr>
+              <td><em>[2026]</em></td>
+              <td>Results: MoE + Transformers vs. baselines on real acquiring data</td>
+              <td>Paper</td>
+              <td><em>[DOI/Preprint]</em></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="small">Others: talks, posters, tech reports, synthetic datasets — <em>[links]</em></p>
+      </div>
+    </section>
+
+    <section id="society">
+      <div class="container">
+        <h2>Education • Society</h2>
+        <div class="grid">
+          <div class="card" style="grid-column:span 6;">
+            <h3>Schools</h3>
+            <p>Workshops and guest lectures on AI‑enabled fraud, ethics and risk assessment.</p>
+          </div>
+          <div class="card" style="grid-column:span 6;">
+            <h3>Podcasts</h3>
+            <p>“CyberAntifraud” series interviewing researchers and fraud leaders. <em>[link]</em></p>
+          </div>
+          <div class="card" style="grid-column:span 6;">
+            <h3>Citizen Science</h3>
+            <p>Awareness materials on safe payments for merchants and consumers. <em>[materials]</em></p>
+          </div>
+          <div class="card" style="grid-column:span 6;">
+            <h3>In the media</h3>
+            <p>Selected articles and interviews. <em>[clippings]</em></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="research-lines">
+      <div class="container">
+        <h2>Research lines • Highlights • Impact • Profile • Awards</h2>
+        <div class="grid">
+          <div class="card" style="grid-column:span 6;">
+            <h3>Research lines</h3>
+            <ul class="list-clean">
+              <li>Hybrid architectures (MoE, Transformers, Autoencoders, GNN).</li>
+              <li>Temporal validation, drift and continual learning.</li>
+              <li>Operational explainability.</li>
+            </ul>
+          </div>
+          <div class="card" style="grid-column:span 6;">
+            <h3>Key impact areas</h3>
+            <ul class="list-clean">
+              <li>Less merchant friction with equal or higher security.</li>
+              <li>Reduced fraud loss.</li>
+              <li>Simplified audit and compliance.</li>
+            </ul>
+          </div>
+          <div class="card" style="grid-column:span 6;">
+            <h3>Research profile</h3>
+            <p>Applied focus, methodological rigour, full documentation and controlled reproducibility.</p>
+          </div>
+          <div class="card" style="grid-column:span 6;">
+            <h3>Awards and distinctions</h3>
+            <p><em>[tbd]</em></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacts">
+      <div class="container grid">
+        <div class="card" style="grid-column:span 7;">
+          <h2>Contacts</h2>
+          <p><strong>CyberAntifraud</strong> • Lisbon, Portugal</p>
+          <p>Email: <a href="mailto:hello@cyberantifraud.com">hello@cyberantifraud.com</a></p>
+          <p>Social: <a href="[LinkedIn]">LinkedIn</a> • <a href="[GitHub]">GitHub</a> • <a href="[Twitter/X]">Twitter</a></p>
+          <p class="small">Whistleblower Portal: <em>[link]</em> • Privacy Policy: <em>[link]</em></p>
+        </div>
+        <div class="card" style="grid-column:span 5;">
+          <h2>Accreditations & Partners</h2>
+          <div class="badges">
+            <img src="assets/acfe.png" alt="ACFE" />
+            <img src="assets/iso.png" alt="ISO" />
+            <img src="assets/novaims.png" alt="NOVA IMS" />
+          </div>
+          <p class="small" style="margin-top:.5rem">Co‑funding/support: <em>[FCT/EU/Industry]</em></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container small">
+      <p><strong>CyberAntifraud</strong> — © <span id="year"></span>. NOVA Information Management School (doctoral affiliation). This is an independent academic site.</p>
+      <p><a href="#content">Back to top ↑</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
