@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CyberAntifraud • For Reviewers</title>
+  <meta name="description" content="Reviewer oriented page. Research goals, validation protocol, cost model, governance, and artefacts." />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="icon" href="assets/favicon.png" />
+  <style>
+    :root{--bg:#ffffff;--fg:#0f172a;--sub:#334155;--muted:#64748b;--line:#e2e8f0;--card:#f8fafc;--accent:#e2f3ff;--maxw:980px}
+    @media (prefers-color-scheme: dark){:root{--bg:#0b1220;--fg:#e5eefc;--sub:#c6d0e5;--muted:#96a2bd;--line:#18243a;--card:#0f172a;--accent:#07233a}}
+    body{margin:0;font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Cantarell,'Helvetica Neue',Arial,sans-serif;color:var(--fg);background:var(--bg)}
+    a{color:#0ea5e9;text-decoration:none} a:hover{text-decoration:underline}
+    .container{max-width:var(--maxw);margin:auto;padding:2rem 1rem}
+    .hero{padding:1.25rem;border:1px solid var(--line);border-radius:14px;background:radial-gradient(900px 260px at 50% -10%, var(--accent), transparent 60%)}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem;margin-top:1rem}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem}
+    h1{margin:.25rem 0 .5rem;line-height:1.2}
+    h2{margin:.25rem 0 .5rem}
+    p,li{color:var(--sub)}
+    .small{color:var(--muted);font-size:.92rem}
+    ul{margin:.25rem 0 0 0;padding:0 0 0 1.1rem}
+    .btn{display:inline-block;background:var(--fg);color:var(--bg);padding:.55rem .9rem;border-radius:10px;border:1px solid var(--line)}
+    .btn.secondary{background:transparent;color:var(--fg)}
+    .btn:hover{opacity:.92;text-decoration:none}
+    .btnrow{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.75rem}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero">
+      <div class="small"><a href="index.html">Back to site</a></div>
+      <h1>For reviewers</h1>
+      <p>
+        This page provides a concise and verifiable view of the research scope, evaluation protocol, cost model assumptions, and governance stance.
+        No sensitive operational data is disclosed. Public artefacts are synthetic or anonymised.
+      </p>
+      <div class="btnrow">
+        <a class="btn" href="docs/CyberAntifraud_Evaluation_Protocol.pdf">Evaluation protocol PDF</a>
+        <a class="btn secondary" href="docs/CyberAntifraud_Cost_Model_Note.pdf">Cost model note PDF</a>
+        <a class="btn secondary" href="docs/CyberAntifraud_Model_Card_Template.pdf">Model card template PDF</a>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card" style="grid-column:span 7;">
+        <h2>Problem and contribution</h2>
+        <ul>
+          <li>Acquiring fraud detection is non stationary. Random splits inflate performance and hide drift sensitivity.</li>
+          <li>False positives create friction and operational cost. False negatives create direct loss. Accuracy is not the objective.</li>
+          <li>This research proposes a time aware evaluation protocol plus a cost sensitive decision framework suitable for regulated environments.</li>
+        </ul>
+        <p class="small" style="margin-top:.75rem">
+          Intended outcome. Better net benefit and better governance under drift, not just higher offline scores.
+        </p>
+      </div>
+
+      <div class="card" style="grid-column:span 5;">
+        <h2>Scope</h2>
+        <ul>
+          <li>Payments. Merchant acquiring.</li>
+          <li>Targets. False positives and false negatives.</li>
+          <li>Evaluation. Rolling windows and out of time holdout.</li>
+          <li>Governance. Auditability and human oversight for high impact decisions.</li>
+        </ul>
+      </div>
+
+      <div class="card" style="grid-column:span 12;">
+        <h2>Method overview</h2>
+        <ul>
+          <li>Blocked time series validation and rolling window backtests.</li>
+          <li>Explicit leakage control via feature catalog and time consistent aggregations.</li>
+          <li>Cost curves and threshold policies constrained by operational capacity.</li>
+          <li>Governance artefacts. Model card, data disclosure, release gates, drift monitoring.</li>
+        </ul>
+      </div>
+
+      <div class="card" style="grid-column:span 6;">
+        <h2>Limitations</h2>
+        <ul>
+          <li>Public artefacts rely on synthetic data. Production data remains confidential.</li>
+          <li>Cost assumptions are scenario based. Sensitivity analysis is mandatory.</li>
+          <li>Results must be interpreted under drift and operational constraints.</li>
+        </ul>
+      </div>
+
+      <div class="card" style="grid-column:span 6;">
+        <h2>Reproducibility stance</h2>
+        <ul>
+          <li>Protocol and templates are public.</li>
+          <li>Planned open source. Synthetic generator and evaluation harness.</li>
+          <li>Experiment snapshots will be shared as publishable, non sensitive summaries.</li>
+        </ul>
+        <p class="small" style="margin-top:.75rem">
+          Contact. hello@cyberantifraud.com
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

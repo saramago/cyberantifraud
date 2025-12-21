@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>CyberAntifraud • Acquiring Fraud Detection Research Hub</title>
-  <meta name="description" content="Research hub for acquiring fraud detection: reducing false positives and false negatives with rigorous temporal validation, cost-sensitive evaluation, and operational governance." />
+  <meta name="description" content="Research hub for acquiring fraud detection. Reducing false positives and false negatives with time aware validation, cost sensitive evaluation, and operational AI governance." />
   <meta name="theme-color" content="#0f172a" />
   <link rel="canonical" href="https://www.cyberantifraud.com/" />
 
   <meta property="og:title" content="CyberAntifraud • Acquiring Fraud Detection Research Hub" />
-  <meta property="og:description" content="Reducing false positives and false negatives in acquiring with deep learning, temporal validation, cost-sensitive metrics, and AI governance." />
+  <meta property="og:description" content="Reducing false positives and false negatives in acquiring with deep learning, temporal validation, cost sensitive metrics, and AI governance." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/og-cyberantifraud.png" />
 
@@ -20,60 +20,65 @@
       --bg:#ffffff; --fg:#0f172a; --sub:#334155; --muted:#64748b;
       --brand:#0ea5e9; --brand2:#22d3ee; --line:#e2e8f0;
       --card:#f8fafc; --accent:#e2f3ff; --ok:#16a34a; --warn:#f59e0b;
+      --maxw:980px;
     }
     @media (prefers-color-scheme: dark){
       :root{ --bg:#0b1220; --fg:#e5eefc; --sub:#c6d0e5; --muted:#96a2bd; --line:#18243a; --card:#0f172a; --accent:#07233a;}
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Cantarell,'Helvetica Neue',Arial,sans-serif;color:var(--fg);background:var(--bg)}
+    body{margin:0;font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Cantarell,'Helvetica Neue',Arial,sans-serif;color:var(--fg);background:var(--bg)}
     a{color:var(--brand);text-decoration:none}
     a:hover{text-decoration:underline}
-    .container{max-width:1120px;margin:auto;padding:0 1rem}
+    .container{max-width:var(--maxw);margin:auto;padding:0 1rem}
     .skip{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
     .skip:focus{left:1rem;top:1rem;width:auto;height:auto;background:var(--accent);color:var(--fg);padding:.5rem .75rem;border-radius:.5rem;z-index:1000}
-    header{position:sticky;top:0;background:rgba(255,255,255,.82);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line);z-index:999}
-    @media (prefers-color-scheme: dark){ header{background:rgba(11,18,32,.82)}}
+
+    header{position:sticky;top:0;background:rgba(255,255,255,.84);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line);z-index:999}
+    @media (prefers-color-scheme: dark){ header{background:rgba(11,18,32,.84)}}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.75rem 0}
     .brand{display:flex;align-items:center;gap:.75rem;font-weight:850;letter-spacing:.2px}
     .logo{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--brand),var(--brand2));display:inline-block}
-    nav ul{display:flex;flex-wrap:wrap;gap:.5rem;margin:0;padding:0;list-style:none}
-    nav a{padding:.35rem .6rem;border-radius:.5rem;color:var(--fg)}
+
+    nav ul{display:flex;flex-wrap:wrap;gap:.35rem;margin:0;padding:0;list-style:none}
+    nav a{padding:.35rem .55rem;border-radius:.55rem;color:var(--fg)}
     nav a:hover{background:var(--accent);text-decoration:none}
 
     section{padding:2.25rem 0;border-bottom:1px solid var(--line)}
-    .hero{padding:3.25rem 0 2.25rem;border-bottom:1px solid var(--line);
+    .hero{padding:3.1rem 0 2.25rem;border-bottom:1px solid var(--line);
       background:radial-gradient(1200px 420px at 50% -10%, var(--accent), transparent 60%)}
-    .hero h1{font-size:clamp(28px,4vw,46px);line-height:1.12;margin:.25rem 0 .5rem}
-    .hero p{max-width:900px;color:var(--sub);margin:.5rem 0 1.25rem}
+    .hero h1{font-size:clamp(28px,4vw,46px);line-height:1.12;margin:.25rem 0 .6rem}
+    .hero p{max-width:860px;color:var(--sub);margin:.45rem 0 1.2rem}
     .tags{display:flex;flex-wrap:wrap;gap:.5rem;margin:.25rem 0 1rem}
     .tag{display:inline-block;font-size:.82rem;background:var(--card);border:1px solid var(--line);padding:.25rem .6rem;border-radius:999px;color:var(--muted)}
+
+    h2{font-size:clamp(22px,2.5vw,30px);margin:.25rem 0 1rem}
+    h3{font-size:1.05rem;margin:0 0 .35rem}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem}
+    .small{font-size:.92rem;color:var(--muted)}
+    .list{margin:.25rem 0 0 0;padding:0 0 0 1.1rem}
+
+    .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+    .kpi{padding:1rem;border:1px solid var(--line);border-radius:12px;background:var(--bg)}
+    .kpi .num{font-weight:900;font-size:1.45rem}
+
     .btnrow{display:flex;gap:.6rem;flex-wrap:wrap}
     .btn{display:inline-block;background:var(--fg);color:var(--bg);padding:.55rem .9rem;border-radius:10px;border:1px solid var(--line)}
     .btn.secondary{background:transparent;color:var(--fg)}
     .btn:hover{opacity:.92;text-decoration:none}
 
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem}
-    h2{font-size:clamp(22px,2.5vw,30px);margin:.25rem 0 1rem}
-    h3{font-size:1.05rem;margin:0 0 .35rem}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem}
-    .small{font-size:.92rem;color:var(--muted)}
-    .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
-    .kpi{padding:1rem;border:1px solid var(--line);border-radius:12px;background:var(--bg)}
-    .kpi .num{font-weight:900;font-size:1.45rem}
     .pill{display:inline-block;border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:.25rem .6rem;color:var(--muted);font-size:.82rem;margin:.15rem .25rem .15rem 0}
-    .list{margin:.25rem 0 0 0;padding:0 0 0 1.1rem}
     .table{width:100%;border-collapse:collapse}
     .table th,.table td{border-bottom:1px solid var(--line);padding:.6rem .5rem;text-align:left;vertical-align:top}
     .table th{font-size:.9rem;color:var(--muted)}
+
     .status{display:inline-block;font-size:.82rem;border:1px solid var(--line);border-radius:999px;padding:.15rem .55rem;background:var(--bg);color:var(--muted)}
     .status.ok{color:var(--ok)}
     .status.warn{color:var(--warn)}
+
     .footer{padding:2rem 0;background:var(--card)}
-    .cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-    @media (max-width: 920px){
-      .grid{grid-template-columns:repeat(6,1fr)}
-      .cols{grid-template-columns:1fr}
+    @media (max-width: 980px){
       header nav{display:none}
     }
   </style>
@@ -86,7 +91,7 @@
     "url":"https://www.cyberantifraud.com/",
     "jobTitle":"Doctoral Researcher",
     "affiliation":{"@type":"CollegeOrUniversity","name":"NOVA IMS"},
-    "knowsAbout":["Fraud detection","Acquiring payments","Deep learning","Time series validation","Cost-sensitive learning","AI governance"]
+    "knowsAbout":["Fraud detection","Acquiring payments","Deep learning","Time series validation","Cost sensitive learning","AI governance"]
   }
   </script>
 </head>
@@ -105,10 +110,11 @@
           <li><a href="#research">Research</a></li>
           <li><a href="#protocol">Protocol</a></li>
           <li><a href="#governance">Governance</a></li>
-          <li><a href="#framework">AI Governance</a></li>
-          <li><a href="#papers">Papers</a></li>
-          <li><a href="#repro">Reproducibility</a></li>
+          <li><a href="#ai-governance">AI Governance</a></li>
+          <li><a href="#outputs">Outputs</a></li>
+          <li><a href="#repro">Repro</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="reviewers.html">Reviewers</a></li>
         </ul>
       </nav>
     </div>
@@ -118,29 +124,29 @@
     <section class="hero">
       <div class="container">
         <div class="tags">
-          <span class="tag">Acquiring Payments</span>
-          <span class="tag">Deep Learning</span>
-          <span class="tag">False Positives and False Negatives</span>
-          <span class="tag">Temporal Validation and Drift</span>
-          <span class="tag">Cost-sensitive Evaluation</span>
+          <span class="tag">Acquiring payments</span>
+          <span class="tag">Deep learning</span>
+          <span class="tag">False positives and false negatives</span>
+          <span class="tag">Temporal validation and drift</span>
+          <span class="tag">Cost sensitive evaluation</span>
         </div>
 
         <h1>Acquiring fraud detection. Less friction. Less loss. More governance.</h1>
 
         <p>
-          CyberAntifraud is a research hub for my PhD work at NOVA IMS on fraud detection in merchant acquiring.
-          The core goal is practical and measurable. Reduce false positives that create customer and merchant friction, and reduce false negatives that translate into direct fraud losses.
-          The work combines rigorous temporal validation, cost-aware evaluation, and operational AI governance suitable for regulated environments.
+          CyberAntifraud is an independent academic hub for my PhD work at NOVA IMS focused on fraud detection in merchant acquiring.
+          The core objective is practical and measurable. Reduce false positives that create customer and merchant friction, and reduce false negatives that translate into direct fraud losses.
+          The work combines time aware validation, cost sensitive evaluation, and operational AI governance suitable for regulated environments.
         </p>
 
         <div class="btnrow">
-          <a class="btn" href="#papers">View papers</a>
-          <a class="btn secondary" href="#protocol">View evaluation protocol</a>
-          <a class="btn secondary" href="#framework">View AI governance framework</a>
+          <a class="btn" href="#outputs">View papers and outputs</a>
+          <a class="btn secondary" href="#protocol">View protocol</a>
+          <a class="btn secondary" href="reviewers.html">For reviewers</a>
         </div>
 
         <p class="small" style="margin-top:1rem">
-          Data disclosure policy: no sensitive operational data is published. Public examples rely on synthetic or anonymised datasets.
+          Data disclosure policy. No sensitive operational data is published. Public examples rely on synthetic or anonymised datasets.
         </p>
       </div>
     </section>
@@ -152,33 +158,33 @@
           <div class="card" style="grid-column:span 7;">
             <h3>Research questions</h3>
             <ul class="list">
-              <li>How can we reduce false positives while preserving or improving fraud capture, under strict temporal validation?</li>
-              <li>How should we evaluate models when the real objective is net benefit, not accuracy?</li>
+              <li>How can we reduce false positives while preserving or improving fraud capture, under strict time aware validation?</li>
+              <li>How should we evaluate models when the real target is net benefit, not accuracy?</li>
               <li>How can we detect and control drift in acquiring, where merchant and attacker behaviour evolves continuously?</li>
-              <li>How can governance, auditability and human oversight be operationalised without killing performance?</li>
+              <li>How can governance, auditability and human oversight be operationalised without reducing performance?</li>
             </ul>
             <p class="small" style="margin-top:.75rem">
-              Scope: card-present and e-commerce acquiring, merchant context, behavioural signals, and cost-aware decision policies.
+              Scope. Card present and e-commerce acquiring. Merchant context. Behavioural signals. Cost aware decision policies.
             </p>
           </div>
 
           <div class="card" style="grid-column:span 5;">
             <h3>Facts and figures</h3>
             <div class="kpis">
-              <div class="kpi"><div class="num">1 TB</div><div class="small">Transaction scale in industry context</div></div>
-              <div class="kpi"><div class="num">3</div><div class="small">Target papers: Survey, Methods, Results</div></div>
-              <div class="kpi"><div class="num">Q1</div><div class="small">Survey publication target</div></div>
-              <div class="kpi"><div class="num">Strict</div><div class="small">Time-aware validation and drift control</div></div>
+              <div class="kpi"><div class="num">1 TB</div><div class="small">Industry scale context</div></div>
+              <div class="kpi"><div class="num">3</div><div class="small">Target papers</div></div>
+              <div class="kpi"><div class="num">Q1</div><div class="small">Survey target</div></div>
+              <div class="kpi"><div class="num">Strict</div><div class="small">Time aware validation</div></div>
             </div>
           </div>
 
           <div class="card" style="grid-column:span 12;">
-            <h3>Key contributions on this hub</h3>
-            <span class="pill">Temporal evaluation protocol (rolling windows)</span>
-            <span class="pill">Cost model for FP and FN in euros</span>
-            <span class="pill">Model governance: model cards and audit logs</span>
-            <span class="pill">Attack simulation with LLMs for robustness</span>
-            <span class="pill">Operational explainability for fraud decisions</span>
+            <h3>Core outputs on this hub</h3>
+            <span class="pill">Evaluation protocol</span>
+            <span class="pill">Cost model note</span>
+            <span class="pill">Model card template</span>
+            <span class="pill">LLM attack simulation</span>
+            <span class="pill">Operational explainability</span>
           </div>
         </div>
       </div>
@@ -186,33 +192,36 @@
 
     <section id="protocol">
       <div class="container">
-        <h2>Evaluation protocol</h2>
+        <h2>Protocol and templates</h2>
         <div class="grid">
           <div class="card" style="grid-column:span 6;">
-            <h3>Temporal validation</h3>
+            <h3>Evaluation protocol</h3>
             <p>
-              Fraud data is non-stationary. Random splits are misleading. This work uses blocked time-series validation and rolling windows to approximate production reality, quantify drift sensitivity, and avoid leakage.
+              Fraud data is non stationary. Random splits are misleading. This work uses blocked time series validation and rolling windows to approximate production reality, quantify drift sensitivity, and prevent leakage.
             </p>
-            <p class="small">Download: <em>[Protocol PDF link]</em> • Code: <em>[Repo link]</em></p>
+            <p class="small">
+              PDF. <a href="docs/CyberAntifraud_Evaluation_Protocol.pdf">Download</a>
+            </p>
           </div>
 
           <div class="card" style="grid-column:span 6;">
-            <h3>Cost-sensitive evaluation</h3>
+            <h3>Cost model note</h3>
             <p>
-              The primary KPI is net benefit. False positives create friction and operational cost. False negatives create direct loss.
-              The evaluation includes cost curves, threshold policies, and stability under drift, not just AUC.
+              The primary KPI is expected net benefit. False positives create friction and operational cost. False negatives create direct loss. This note defines assumptions, constraints, and reporting requirements for threshold selection.
             </p>
-            <p class="small">Download: <em>[Cost model note link]</em> • Example: <em>[Synthetic demo link]</em></p>
+            <p class="small">
+              PDF. <a href="docs/CyberAntifraud_Cost_Model_Note.pdf">Download</a>
+            </p>
           </div>
 
           <div class="card" style="grid-column:span 12;">
-            <h3>Metrics tracked</h3>
-            <ul class="list">
-              <li>Precision, Recall, AUPRC, and minority-focused metrics where applicable.</li>
-              <li>Cost-weighted loss and expected net benefit under operational constraints.</li>
-              <li>Stability across time: variance across windows, drift sensitivity, and calibration drift.</li>
-              <li>Operational metrics: alert volume, analyst load, and override rates.</li>
-            </ul>
+            <h3>Model card template</h3>
+            <p>
+              Audit ready documentation. Model overview, data windows, temporal results, drift monitoring, governance sign off, and rollback criteria.
+            </p>
+            <p class="small">
+              PDF. <a href="docs/CyberAntifraud_Model_Card_Template.pdf">Download</a>
+            </p>
           </div>
         </div>
       </div>
@@ -225,112 +234,117 @@
           <div class="card" style="grid-column:span 6;">
             <h3>Governance principles</h3>
             <ul class="list">
-              <li>Data minimisation and strict purpose limitation for anti-fraud.</li>
-              <li>Documented model lineage: data version, features, training window, and parameters.</li>
-              <li>Human oversight for high impact decisions, with clear accountability.</li>
-              <li>Auditability by design: logs, model cards, and decision traceability.</li>
+              <li>Data minimisation and explicit purpose limitation for anti fraud.</li>
+              <li>Documented lineage. Data version, features, training window, parameters.</li>
+              <li>Human oversight for high impact decisions with clear accountability.</li>
+              <li>Auditability by design. Logs, model cards, decision traceability.</li>
             </ul>
           </div>
 
           <div class="card" style="grid-column:span 6;">
             <h3>Operational explainability</h3>
             <p>
-              Explainability is treated as an operational instrument, not a compliance checkbox.
-              The goal is to enable analysts, risk teams and auditors to understand why a decision occurred, and how stable that reason is under drift.
+              Explainability is treated as an operational instrument. The goal is to enable analysts, risk teams and auditors to understand why a decision occurred and how stable that reason is under drift.
             </p>
-            <p class="small">Artifacts: <em>[Model card template]</em> • <em>[Data card template]</em> • <em>[Audit checklist]</em></p>
+            <p class="small">
+              Policy. <a href="privacy.html">Privacy and data disclosure</a>
+            </p>
           </div>
 
           <div class="card" style="grid-column:span 12;">
-            <h3>Disclosure policy</h3>
+            <h3>Disclosure statement</h3>
             <p class="small">
-              No production secrets, sensitive rules, merchant identities, or personal data are published. Public materials use synthetic data or anonymised aggregates.
-              Any public robustness demonstrations are designed to inform defence, not enable abuse.
+              No production secrets, sensitive rules, merchant identities, or personal data are published. Public materials use synthetic data or anonymised aggregates. Any public robustness demonstrations are designed to inform defence, not enable abuse.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="framework">
+    <section id="ai-governance">
       <div class="container">
         <h2>AI governance framework for acquiring fraud</h2>
         <div class="grid">
           <div class="card" style="grid-column:span 6;">
-            <h3>1. Risk register updates</h3>
+            <h3>Risk register updates</h3>
             <ul class="list">
-              <li>AI-assisted social engineering and merchant onboarding fraud.</li>
+              <li>AI assisted social engineering and merchant onboarding fraud.</li>
               <li>Deepfake voice and video fraud in call centres and identity checks.</li>
-              <li>Prompt injection and data poisoning in AI-enabled workflows.</li>
+              <li>Prompt injection and data poisoning in AI enabled workflows.</li>
               <li>Model leakage, misuse, and shadow AI usage by internal teams.</li>
             </ul>
           </div>
 
           <div class="card" style="grid-column:span 6;">
-            <h3>2. Control enhancements</h3>
+            <h3>Control enhancements</h3>
             <ul class="list">
               <li>Monitoring for drift, calibration decay, and adversarial shifts.</li>
-              <li>Secure AI integration: access control, logging, and input output filtering.</li>
-              <li>Model validation: bias testing, robustness tests, and release gates.</li>
-              <li>Human-in-the-loop for defined high impact thresholds.</li>
+              <li>Secure AI integration. Access control, logging, input output filtering.</li>
+              <li>Model validation. Bias tests, robustness tests, release gates.</li>
+              <li>Human in the loop for defined high impact thresholds.</li>
             </ul>
           </div>
 
           <div class="card" style="grid-column:span 6;">
-            <h3>3. AI usage policies</h3>
+            <h3>AI usage policies</h3>
             <ul class="list">
               <li>Acceptable use and prohibited data categories in prompts.</li>
               <li>Ownership and accountability for AI outputs and decisions.</li>
-              <li>Third-party AI risk management and vendor controls.</li>
+              <li>Third party AI risk management and vendor controls.</li>
             </ul>
           </div>
 
           <div class="card" style="grid-column:span 6;">
-            <h3>4. Framework alignment</h3>
+            <h3>Framework alignment</h3>
             <ul class="list">
-              <li>ISO 27001: AI as an information asset with security controls.</li>
-              <li>NIST RMF and AI RMF: risk assessment and AI-specific controls.</li>
-              <li>ISO 42001: AI management system across the lifecycle, including impact assessment and monitoring.</li>
-              <li>SOC 2: evidence of controls, logging, and continuous monitoring.</li>
+              <li>ISO 27001. AI as an information asset with security controls.</li>
+              <li>NIST RMF and AI RMF. Risk assessment and AI specific controls.</li>
+              <li>ISO 42001. AI management system across the lifecycle including impact assessment and monitoring.</li>
+              <li>SOC 2. Evidence of controls, logging, and continuous monitoring.</li>
             </ul>
-            <p class="small">Note: this hub provides templates to map controls to fraud operations. <em>[Template link]</em></p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="papers">
+    <section id="outputs">
       <div class="container">
         <h2>Papers and outputs</h2>
-        <div class="grid">
-          <div class="card" style="grid-column:span 12;">
-            <table class="table" aria-label="Papers">
-              <thead>
-                <tr><th>Work</th><th>Status</th><th>Focus</th><th>Links</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Survey</strong> Deep learning for acquiring fraud detection</td>
-                  <td><span class="status warn">In progress</span></td>
-                  <td>SLR, metrics, temporal validation, robustness, governance</td>
-                  <td><em>[Preprint]</em> • <em>[Appendix]</em> • <em>[PRISMA]</em></td>
-                </tr>
-                <tr>
-                  <td><strong>Methods</strong> Temporal CV and cost model</td>
-                  <td><span class="status warn">Planned</span></td>
-                  <td>Protocol, cost curves, drift control, baselines</td>
-                  <td><em>[Draft]</em> • <em>[Code]</em></td>
-                </tr>
-                <tr>
-                  <td><strong>Results</strong> Models vs baselines on real acquiring context</td>
-                  <td><span class="status warn">Planned</span></td>
-                  <td>MoE, transformers, autoencoders, operational trade-offs</td>
-                  <td><em>[Draft]</em> • <em>[Experiments]</em></td>
-                </tr>
-              </tbody>
-            </table>
-            <p class="small">Add talks, posters, technical notes, and internal briefings as separate rows when available.</p>
-          </div>
+        <div class="card">
+          <table class="table" aria-label="Papers">
+            <thead>
+              <tr><th>Work</th><th>Status</th><th>Focus</th><th>Links</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Survey</strong> Deep learning for acquiring fraud detection</td>
+                <td><span class="status warn">In progress</span></td>
+                <td>SLR, metrics, temporal validation, robustness, governance</td>
+                <td><em>Preprint coming soon</em></td>
+              </tr>
+              <tr>
+                <td><strong>Methods</strong> Temporal CV and cost model</td>
+                <td><span class="status warn">Planned</span></td>
+                <td>Protocol, cost curves, drift control, baselines</td>
+                <td><em>Draft coming soon</em></td>
+              </tr>
+              <tr>
+                <td><strong>Results</strong> Models vs baselines on acquiring context</td>
+                <td><span class="status warn">Planned</span></td>
+                <td>Model families, operational trade offs, governance</td>
+                <td><em>Draft coming soon</em></td>
+              </tr>
+              <tr>
+                <td><strong>Fraud attack simulation</strong> LLM robustness harness</td>
+                <td><span class="status warn">Planned</span></td>
+                <td>Attack scenarios, canary tests, evaluation harness</td>
+                <td><em>GitHub link coming soon</em></td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="small" style="margin-top:.75rem">
+            Reviewers page. <a href="reviewers.html">Open</a>
+          </p>
         </div>
       </div>
     </section>
@@ -338,24 +352,23 @@
     <section id="repro">
       <div class="container">
         <h2>Reproducibility</h2>
-        <div class="cols">
-          <div class="card">
-            <h3>Open artifacts</h3>
+        <div class="grid">
+          <div class="card" style="grid-column:span 6;">
+            <h3>Open artefacts</h3>
             <ul class="list">
-              <li>Fraud attack simulation with LLMs: <em>[GitHub link]</em></li>
-              <li>Synthetic dataset generator: <em>[GitHub link]</em></li>
-              <li>Evaluation harness and metrics: <em>[GitHub link]</em></li>
+              <li>Evaluation protocol and templates. Public PDFs.</li>
+              <li>Future repositories will include synthetic data and evaluation harness.</li>
+              <li>Experiment tracking references will be provided as publishable snapshots.</li>
             </ul>
           </div>
-          <div class="card">
+          <div class="card" style="grid-column:span 6;">
             <h3>Release gates</h3>
             <ul class="list">
               <li>Temporal backtests across multiple windows.</li>
               <li>Robustness tests and drift canaries.</li>
-              <li>Model card completion and sign-off.</li>
-              <li>Operational threshold policy documented.</li>
+              <li>Model card completion and sign off.</li>
+              <li>Documented threshold policy under constraints.</li>
             </ul>
-            <p class="small">Checklist: <em>[Release readiness PDF]</em></p>
           </div>
         </div>
       </div>
@@ -366,16 +379,14 @@
         <div class="card" style="grid-column:span 7;">
           <h2>Contact</h2>
           <p><strong>CyberAntifraud</strong> • Lisbon, Portugal</p>
-          <p>Email: <a href="mailto:hello@cyberantifraud.com">hello@cyberantifraud.com</a></p>
-          <p class="small">Academic affiliation: NOVA Information Management School. Independent academic website.</p>
-          <p class="small">Responsible disclosure: <em>[security@cyberantifraud.com]</em></p>
+          <p>Email. <a href="mailto:hello@cyberantifraud.com">hello@cyberantifraud.com</a></p>
+          <p class="small">Academic affiliation. NOVA Information Management School. Independent academic website.</p>
         </div>
         <div class="card" style="grid-column:span 5;">
           <h2>Policies</h2>
-          <p class="small">Privacy policy: <em>[link]</em></p>
-          <p class="small">Data disclosure policy: <em>[link]</em></p>
-          <p class="small">Terms: <em>[link]</em></p>
-          <p class="small">Last updated: <span id="lastUpdated"></span></p>
+          <p class="small">Privacy and data disclosure. <a href="privacy.html">Open</a></p>
+          <p class="small">For reviewers. <a href="reviewers.html">Open</a></p>
+          <p class="small">Last updated. <span id="lastUpdated"></span></p>
         </div>
       </div>
     </section>
@@ -383,7 +394,7 @@
 
   <footer class="footer">
     <div class="container small">
-      <p><strong>CyberAntifraud</strong> © <span id="year"></span>. This is an independent academic site. No sensitive data is published.</p>
+      <p><strong>CyberAntifraud</strong> © <span id="year"></span>. Independent academic site. No sensitive data disclosed.</p>
       <p><a href="#content">Back to top</a></p>
     </div>
   </footer>
