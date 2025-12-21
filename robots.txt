@@ -1,0 +1,2 @@
+User-agent: *
+Disallow: /reviewers-9f3c7a.html
