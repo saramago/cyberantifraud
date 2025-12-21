@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CyberAntifraud • Review Pack</title>
+  <meta name="description" content="Private reviewer pack. Research scope, evaluation protocol, cost model, governance stance, limitations, and planned deliverables." />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="referrer" content="no-referrer" />
+  <link rel="icon" href="assets/favicon.png" />
+
+  <style>
+    :root{
+      --bg:#ffffff; --fg:#0f172a; --sub:#334155; --muted:#64748b;
+      --line:#e2e8f0; --card:#f8fafc; --accent:#e2f3ff;
+      --brand:#0ea5e9; --brand2:#22d3ee; --ok:#16a34a; --warn:#f59e0b; --bad:#dc2626;
+      --maxw:980px;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#0b1220; --fg:#e5eefc; --sub:#c6d0e5; --muted:#96a2bd; --line:#18243a; --card:#0f172a; --accent:#07233a;}
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Cantarell,'Helvetica Neue',Arial,sans-serif;color:var(--fg);background:var(--bg)}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:var(--maxw);margin:auto;padding:2rem 1rem}
+    .hero{padding:1.25rem;border:1px solid var(--line);border-radius:14px;background:radial-gradient(1000px 280px at 50% -10%, var(--accent), transparent 60%)}
+    .top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap}
+    h1{margin:.25rem 0 .5rem;line-height:1.2}
+    h2{margin:.25rem 0 .6rem;line-height:1.25}
+    h3{margin:0 0 .35rem;font-size:1.02rem}
+    p,li{color:var(--sub)}
+    .small{color:var(--muted);font-size:.92rem}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem;margin-top:1rem}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem}
+    ul{margin:.25rem 0 0 0;padding:0 0 0 1.1rem}
+    .btnrow{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.75rem}
+    .btn{display:inline-block;background:var(--fg);color:var(--bg);padding:.55rem .9rem;border-radius:10px;border:1px solid var(--line)}
+    .btn.secondary{background:transparent;color:var(--fg)}
+    .btn:hover{opacity:.92;text-decoration:none}
+    .tagrow{display:flex;flex-wrap:wrap;gap:.5rem;margin:.25rem 0 .75rem}
+    .tag{display:inline-block;font-size:.82rem;background:var(--card);border:1px solid var(--line);padding:.22rem .55rem;border-radius:999px;color:var(--muted)}
+    .callout{border:1px solid var(--line);background:var(--bg);border-radius:12px;padding:.85rem}
+    .callout strong{color:var(--fg)}
+    .status{display:inline-block;font-size:.82rem;border:1px solid var(--line);border-radius:999px;padding:.15rem .55rem;background:var(--bg);color:var(--muted)}
+    .status.ok{color:var(--ok)}
+    .status.warn{color:var(--warn)}
+    .status.bad{color:var(--bad)}
+    .table{width:100%;border-collapse:collapse}
+    .table th,.table td{border-bottom:1px solid var(--line);padding:.6rem .5rem;text-align:left;vertical-align:top}
+    .table th{font-size:.9rem;color:var(--muted)}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace}
+    .foot{margin-top:1.25rem;color:var(--muted);font-size:.9rem}
+    @media (max-width: 880px){
+      .container{padding:1.5rem 1rem}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="hero">
+      <div class="top">
+        <div>
+          <div class="small"><a href="index.html">Back to public site</a></div>
+          <h1>Review pack</h1>
+          <div class="tagrow">
+            <span class="tag">Noindex</span>
+            <span class="tag">Private link</span>
+            <span class="tag">No sensitive data</span>
+            <span class="tag">Time aware validation</span>
+            <span class="tag">Cost sensitive evaluation</span>
+            <span class="tag">Governance by design</span>
+          </div>
+        </div>
+        <div class="small">
+          Last updated. <span id="lastUpdated"></span>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>Confidentiality notice.</strong>
+        This page is intended for invited reviewers and collaborators only. The material may be preliminary and must not be redistributed, cited, or used beyond the purpose of peer review and scientific assessment.
+      </div>
+
+      <p class="small" style="margin-top:.75rem">
+        Contact. <a href="mailto:hello@cyberantifraud.com">hello@cyberantifraud.com</a>
+      </p>
+
+      <div class="btnrow">
+        <a class="btn" href="docs/CyberAntifraud_Evaluation_Protocol.pdf">Evaluation protocol (PDF)</a>
+        <a class="btn secondary" href="docs/CyberAntifraud_Cost_Model_Note.pdf">Cost model note (PDF)</a>
+        <a class="btn secondary" href="docs/CyberAntifraud_Model_Card_Template.pdf">Model card template (PDF)</a>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card" style="grid-column:span 7;">
+        <h2>What this PhD is solving</h2>
+        <ul>
+          <li>Acquiring fraud detection is non stationary. Offline results are routinely inflated by leakage and invalid splits.</li>
+          <li>False positives generate friction, operational load, and commercial damage. False negatives generate direct fraud loss and downstream cost.</li>
+          <li>The goal is not accuracy. The goal is expected net benefit under realistic temporal deployment constraints.</li>
+          <li>The contribution is an evaluation and governance stack that makes claims defensible, audit ready, and operationally relevant.</li>
+        </ul>
+      </div>
+
+      <div class="card" style="grid-column:span 5;">
+        <h2>Scope and non scope</h2>
+        <ul>
+          <li>Scope. Merchant acquiring, card present and e-commerce scenarios, merchant context signals.</li>
+          <li>Scope. Time aware evaluation, drift sensitivity, cost aware decision policies.</li>
+          <li>Non scope. Publishing proprietary rules, merchant identities, or operational secrets.</li>
+          <li>Non scope. Any public release of raw production data.</li>
+        </ul>
+      </div>
+
+      <div class="card" style="grid-column:span 12;">
+        <h2>Artefacts</h2>
+        <table class="table" aria-label="Artefacts">
+          <thead>
+            <tr>
+              <th>Artefact</th>
+              <th>Purpose</th>
+              <th>Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Evaluation protocol</strong></td>
+              <td>Blocked time series validation, rolling windows, leakage controls, drift canaries, reporting.</td>
+              <td><a href="docs/CyberAntifraud_Evaluation_Protocol.pdf">PDF</a></td>
+            </tr>
+            <tr>
+              <td><strong>Cost model note</strong></td>
+              <td>Expected net benefit framing, cost curve reporting, threshold policy under operational capacity constraints.</td>
+              <td><a href="docs/CyberAntifraud_Cost_Model_Note.pdf">PDF</a></td>
+            </tr>
+            <tr>
+              <td><strong>Model card template</strong></td>
+              <td>Audit ready documentation and release gates. What is claimed, what is measured, and how it is monitored.</td>
+              <td><a href="docs/CyberAntifraud_Model_Card_Template.pdf">PDF</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="small" style="margin-top:.75rem">
+          All artefacts are designed to be defensible in regulated environments. The goal is operational truth, not just offline performance.
+        </p>
+      </div>
+
+      <div class="card" style="grid-column:span 6;">
+        <h2>Paper plan and status</h2>
+        <table class="table" aria-label="Papers">
+          <thead>
+            <tr><th>Paper</th><th>Status</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Survey</strong> Deep learning for acquiring fraud detection</td>
+              <td><span class="status warn">In progress</span></td>
+              <td>SLR with explicit gap, PRISMA alignment, evaluation pitfalls, temporal validation, drift, governance.</td>
+            </tr>
+            <tr>
+              <td><strong>Methods</strong> Evaluation protocol and cost model</td>
+              <td><span class="status warn">Planned</span></td>
+              <td>Formal protocol, baselines, leakage controls, cost curves, decision policy and operational constraints.</td>
+            </tr>
+            <tr>
+              <td><strong>Results</strong> Models vs baselines under drift</td>
+              <td><span class="status warn">Planned</span></td>
+              <td>Comparison of model families under rolling windows, calibration decay, and operational KPIs.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card" style="grid-column:span 6;">
+        <h2>Evaluation stance</h2>
+        <ul>
+          <li>Temporal splits only. No random split claims.</li>
+          <li>Blocked time series cross validation plus rolling window backtests.</li>
+          <li>Leakage prevention as a first class requirement, with explicit feature time rules.</li>
+          <li>Metrics reported as a bundle. AUPRC, recall at constrained precision, cost curves, calibration and stability.</li>
+          <li>Decision policy framed by expected net benefit and operational capacity.</li>
+        </ul>
+        <p class="small" style="margin-top:.75rem">
+          If a result looks too good, assume leakage until proven otherwise. This project treats that as default scepticism.
+        </p>
+      </div>
+
+      <div class="card" style="grid-column:span 6;">
+        <h2>Governance stance</h2>
+        <ul>
+          <li>Data minimisation and purpose limitation for anti fraud.</li>
+          <li>Traceability. Dataset window, features, versioning, training and inference lineage.</li>
+          <li>Release gates. Temporal backtests, drift canaries, rollback criteria.</li>
+          <li>Human oversight for high impact decisions with explicit accountability.</li>
+        </ul>
+      </div>
+
+      <div class="card" style="grid-column:span 6;">
+        <h2>Limitations and risks</h2>
+        <ul>
+          <li>Public artefacts are synthetic or anonymised. Production data remains confidential by design.</li>
+          <li>Cost assumptions are scenario based and require sensitivity analysis across plausible ranges.</li>
+          <li>Attacker adaptation and merchant evolution impose drift. Continuous monitoring is not optional.</li>
+          <li>Operational constraints can dominate optimal thresholds. Capacity constraints must be explicit.</li>
+        </ul>
+      </div>
+
+      <div class="card" style="grid-column:span 12;">
+        <h2>What I want from a reviewer</h2>
+        <ul>
+          <li>Is the problem framing tight and defensible for a Q1 venue, especially around net benefit and temporal realism?</li>
+          <li>Is the evaluation protocol credible and sufficiently strict to prevent inflated claims?</li>
+          <li>Are limitations explicit enough, and are there missing threats to validity?</li>
+          <li>Is the governance stance practical, not performative, and aligned with regulated operations?</li>
+        </ul>
+        <p class="small" style="margin-top:.75rem">
+          Three concrete flaws that would cause rejection and how to fix them is the highest value feedback.
+        </p>
+      </div>
+
+      <div class="card" style="grid-column:span 12;">
+        <h2>Private access hygiene</h2>
+        <p class="small">
+          This page is intentionally not linked from the public site. It includes a noindex directive and a no-referrer policy. Share this URL directly only with invited reviewers.
+        </p>
+      </div>
+    </div>
+
+    <div class="foot">
+      CyberAntifraud is an independent academic research site. No sensitive data is disclosed. This review pack is shared by direct invitation only.
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('lastUpdated').textContent = new Date().toISOString().slice(0,10);
+  </script>
+</body>
+</html>
