@@ -21,6 +21,7 @@
       --brand:#0ea5e9; --brand2:#22d3ee; --line:#e2e8f0;
       --card:#f8fafc; --accent:#e2f3ff; --ok:#16a34a; --warn:#f59e0b;
       --maxw:980px;
+      --heroImg: url("assets/hero-cyberantifraud.png");
     }
     @media (prefers-color-scheme: dark){
       :root{ --bg:#0b1220; --fg:#e5eefc; --sub:#c6d0e5; --muted:#96a2bd; --line:#18243a; --card:#0f172a; --accent:#07233a;}
@@ -45,8 +46,14 @@
     nav a:hover{background:var(--accent);text-decoration:none}
 
     section{padding:2.25rem 0;border-bottom:1px solid var(--line)}
-    .hero{padding:3.1rem 0 2.25rem;border-bottom:1px solid var(--line);
-      background:radial-gradient(1200px 420px at 50% -10%, var(--accent), transparent 60%)}
+    .hero{
+      padding:3.1rem 0 2.25rem;
+      border-bottom:1px solid var(--line);
+      background:
+        radial-gradient(1200px 420px at 50% -10%, var(--accent), transparent 60%),
+        linear-gradient(180deg, rgba(0,0,0,.04), transparent 30%),
+        var(--bg);
+    }
     .hero h1{font-size:clamp(28px,4vw,46px);line-height:1.12;margin:.25rem 0 .6rem}
     .hero p{max-width:860px;color:var(--sub);margin:.45rem 0 1.2rem}
     .tags{display:flex;flex-wrap:wrap;gap:.5rem;margin:.25rem 0 1rem}
@@ -81,6 +88,120 @@
     @media (max-width: 980px){
       header nav{display:none}
     }
+
+    /* Blueprint hero block */
+    .blueprintWrap{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:1rem;
+      align-items:stretch;
+      margin-top:1.1rem;
+    }
+    @media (max-width: 900px){
+      .blueprintWrap{grid-template-columns:1fr}
+    }
+    .blueprint{
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,0)),
+        var(--heroImg);
+      background-size: cover;
+      background-position: center;
+      min-height: 420px;
+      position:relative;
+      overflow:hidden;
+    }
+    @media (prefers-color-scheme: dark){
+      .blueprint{
+        background:
+          linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.05)),
+          var(--heroImg);
+        background-size: cover;
+        background-position: center;
+      }
+    }
+    .blueprint::after{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        radial-gradient(600px 260px at 50% 35%, rgba(34,211,238,.20), transparent 65%),
+        radial-gradient(520px 260px at 50% 70%, rgba(14,165,233,.12), transparent 70%);
+      pointer-events:none;
+    }
+    .blueprintBadge{
+      position:absolute;
+      top:14px; right:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.78);
+      padding:.35rem .6rem;
+      border-radius:999px;
+      font-size:.82rem;
+      color:var(--muted);
+      backdrop-filter: blur(8px);
+    }
+    @media (prefers-color-scheme: dark){
+      .blueprintBadge{background:rgba(11,18,32,.72)}
+    }
+
+    /* Three module squares */
+    .modules{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:1rem;
+    }
+    .moduleCard{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:1rem;
+      position:relative;
+      overflow:hidden;
+      min-height: 128px;
+    }
+    .moduleHead{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:.75rem;
+      margin-bottom:.35rem;
+    }
+    .moduleTitle{
+      font-weight:850;
+      letter-spacing:.2px;
+      margin:0;
+      line-height:1.15;
+    }
+    .moduleTag{
+      font-size:.75rem;
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:.18rem .5rem;
+      color:var(--muted);
+      background:var(--bg);
+      white-space:nowrap;
+      height:fit-content;
+    }
+    .schem{
+      margin-top:.55rem;
+      border-radius:12px;
+      border:1px dashed var(--line);
+      background:linear-gradient(135deg, rgba(14,165,233,.08), rgba(34,211,238,.05));
+      padding:.55rem;
+    }
+    .schem svg{
+      width:100%;
+      height:54px;
+      display:block;
+    }
+    .schem line, .schem path, .schem circle, .schem rect{
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.4;
+      opacity:.9;
+    }
+    .schem .thin{stroke-width:1}
+    .schem .fill{fill: currentColor; opacity:.10; stroke: none;}
   </style>
 
   <script type="application/ld+json">
@@ -141,6 +262,77 @@
         <div class="btnrow">
           <a class="btn" href="#outputs">View papers and outputs</a>
           <a class="btn secondary" href="#protocol">View protocol</a>
+        </div>
+
+        <div class="blueprintWrap" aria-label="CyberAntifraud visual concept">
+          <div class="blueprint" role="img" aria-label="Blueprint style visual inspired by antifraud research systems">
+            <div class="blueprintBadge">Research schematic</div>
+          </div>
+
+          <div class="modules" aria-label="Core modules">
+            <div class="moduleCard">
+              <div class="moduleHead">
+                <h3 class="moduleTitle">Temporal Integrity Gate</h3>
+                <span class="moduleTag">time aware</span>
+              </div>
+              <div class="small">Blocked splits, rolling windows, leakage control, drift stress testing.</div>
+              <div class="schem" aria-hidden="true">
+                <svg viewBox="0 0 420 54" preserveAspectRatio="none">
+                  <line x1="16" y1="28" x2="404" y2="28"></line>
+                  <circle cx="70" cy="28" r="7"></circle>
+                  <circle cx="150" cy="28" r="7"></circle>
+                  <circle cx="230" cy="28" r="7"></circle>
+                  <circle cx="310" cy="28" r="7"></circle>
+                  <path class="thin" d="M70,28 C95,10 125,10 150,28"></path>
+                  <path class="thin" d="M150,28 C175,46 205,46 230,28"></path>
+                  <path class="thin" d="M230,28 C255,10 285,10 310,28"></path>
+                  <rect class="fill" x="40" y="14" width="60" height="28" rx="8"></rect>
+                </svg>
+              </div>
+            </div>
+
+            <div class="moduleCard">
+              <div class="moduleHead">
+                <h3 class="moduleTitle">Cost and Friction Engine</h3>
+                <span class="moduleTag">net benefit</span>
+              </div>
+              <div class="small">Cost curves, threshold policy, friction budget, operational capacity constraints.</div>
+              <div class="schem" aria-hidden="true">
+                <svg viewBox="0 0 420 54" preserveAspectRatio="none">
+                  <path d="M18,40 C70,10 140,48 200,22 C260,-2 330,40 404,14"></path>
+                  <line class="thin" x1="18" y1="40" x2="18" y2="14"></line>
+                  <line class="thin" x1="18" y1="40" x2="120" y2="40"></line>
+                  <circle cx="200" cy="22" r="7"></circle>
+                  <path class="thin" d="M200,22 L200,46"></path>
+                  <rect class="fill" x="188" y="6" width="24" height="32" rx="10"></rect>
+                </svg>
+              </div>
+            </div>
+
+            <div class="moduleCard">
+              <div class="moduleHead">
+                <h3 class="moduleTitle">Governance Trace Layer</h3>
+                <span class="moduleTag">audit ready</span>
+              </div>
+              <div class="small">Model cards, release gates, monitoring evidence, rollback triggers, oversight.</div>
+              <div class="schem" aria-hidden="true">
+                <svg viewBox="0 0 420 54" preserveAspectRatio="none">
+                  <rect x="20" y="12" width="86" height="30" rx="10"></rect>
+                  <rect x="148" y="12" width="86" height="30" rx="10"></rect>
+                  <rect x="276" y="12" width="124" height="30" rx="10"></rect>
+                  <path class="thin" d="M106,27 L148,27"></path>
+                  <path class="thin" d="M234,27 L276,27"></path>
+                  <circle cx="106" cy="27" r="3"></circle>
+                  <circle cx="148" cy="27" r="3"></circle>
+                  <circle cx="234" cy="27" r="3"></circle>
+                  <circle cx="276" cy="27" r="3"></circle>
+                  <path class="thin" d="M308,18 L392,18"></path>
+                  <path class="thin" d="M308,27 L392,27"></path>
+                  <path class="thin" d="M308,36 L392,36"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
 
         <p class="small" style="margin-top:1rem">
