@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CyberAntifraud • Acquiring Fraud Detection Research Hub</title>
-  <meta name="description" content="Research hub for acquiring fraud detection. Reducing false positives and false negatives with time aware validation, cost sensitive evaluation, and operational AI governance." />
+  <title>CyberAntifraud • Acquiring Fraud Detection • PhD + Applied Delivery</title>
+  <meta name="description" content="Applied PhD hub for acquiring fraud detection. Deep learning with time aware validation, cost sensitive evaluation, and operational AI governance. Advisory and applied support for fraud teams." />
   <meta name="theme-color" content="#0f172a" />
   <link rel="canonical" href="https://www.cyberantifraud.com/" />
 
-  <meta property="og:title" content="CyberAntifraud • Acquiring Fraud Detection Research Hub" />
-  <meta property="og:description" content="Reducing false positives and false negatives in acquiring with deep learning, temporal validation, cost sensitive metrics, and AI governance." />
+  <meta property="og:title" content="CyberAntifraud • Acquiring Fraud Detection • PhD + Applied Delivery" />
+  <meta property="og:description" content="Applied PhD hub for acquiring fraud detection. Deep learning, temporal validation, cost sensitive metrics, drift control, and AI governance. Advisory and applied support for fraud teams." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/og-cyberantifraud.png" />
 
@@ -55,7 +55,7 @@
         var(--bg);
     }
     .hero h1{font-size:clamp(28px,4vw,46px);line-height:1.12;margin:.25rem 0 .6rem}
-    .hero p{max-width:860px;color:var(--sub);margin:.45rem 0 1.2rem}
+    .hero p{max-width:860px;color:var(--sub);margin:.45rem 0 1.1rem}
     .tags{display:flex;flex-wrap:wrap;gap:.5rem;margin:.25rem 0 1rem}
     .tag{display:inline-block;font-size:.82rem;background:var(--card);border:1px solid var(--line);padding:.25rem .6rem;border-radius:999px;color:var(--muted)}
 
@@ -84,12 +84,21 @@
     .status.ok{color:var(--ok)}
     .status.warn{color:var(--warn)}
 
+    .callout{
+      border:1px solid var(--line);
+      background:linear-gradient(135deg, rgba(14,165,233,.08), rgba(34,211,238,.06));
+      border-radius:14px;
+      padding:.9rem 1rem;
+      margin:.9rem 0 0 0;
+    }
+    .callout strong{color:var(--fg)}
+    .callout .small{margin:.25rem 0 0 0}
+
     .footer{padding:2rem 0;background:var(--card)}
     @media (max-width: 980px){
       header nav{display:none}
     }
 
-    /* Blueprint hero block */
     .blueprintWrap{
       display:grid;
       grid-template-columns: 1.15fr .85fr;
@@ -144,8 +153,6 @@
     @media (prefers-color-scheme: dark){
       .blueprintBadge{background:rgba(11,18,32,.72)}
     }
-
-    /* This ensures the SVG fills the blueprint area and is visible */
     .bpSvg{
       position:absolute;
       inset:0;
@@ -157,7 +164,6 @@
       opacity:.95;
     }
 
-    /* Three module squares */
     .modules{
       display:grid;
       grid-template-columns:1fr;
@@ -223,9 +229,12 @@
     "@type":"Person",
     "name":"Paulo Saramago",
     "url":"https://www.cyberantifraud.com/",
-    "jobTitle":"Doctoral Researcher",
+    "jobTitle":"Doctoral Researcher (Acquiring Fraud Detection)",
     "affiliation":{"@type":"CollegeOrUniversity","name":"NOVA IMS"},
-    "knowsAbout":["Fraud detection","Acquiring payments","Deep learning","Time series validation","Cost sensitive learning","AI governance"]
+    "knowsAbout":["Fraud detection","Merchant acquiring","Deep learning","Time series validation","Cost sensitive learning","Model risk management","AI governance"],
+    "sameAs":[
+      "https://www.linkedin.com/in/saramago/"
+    ]
   }
   </script>
 </head>
@@ -241,12 +250,11 @@
       </div>
       <nav aria-label="Main">
         <ul>
+          <li><a href="#offer">Offer</a></li>
           <li><a href="#research">Research</a></li>
           <li><a href="#protocol">Protocol</a></li>
           <li><a href="#governance">Governance</a></li>
-          <li><a href="#ai-governance">AI Governance</a></li>
           <li><a href="#outputs">Outputs</a></li>
-          <li><a href="#repro">Repro</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -257,57 +265,119 @@
     <section class="hero">
       <div class="container">
         <div class="tags">
-          <span class="tag">Acquiring payments</span>
+          <span class="tag">Acquiring fraud</span>
           <span class="tag">Deep learning</span>
-          <span class="tag">False positives and false negatives</span>
-          <span class="tag">Temporal validation and drift</span>
-          <span class="tag">Cost sensitive evaluation</span>
+          <span class="tag">Temporal validation</span>
+          <span class="tag">Cost sensitive metrics</span>
+          <span class="tag">Operational governance</span>
         </div>
 
-        <h1>Acquiring fraud detection. Less friction. Less loss. More governance.</h1>
+        <h1>Acquiring fraud detection. Less friction. Less loss. Governed AI.</h1>
 
         <p>
-          CyberAntifraud is an independent academic hub for my PhD work at NOVA IMS focused on fraud detection in merchant acquiring.
-          The core objective is practical and measurable. Reduce false positives that create customer and merchant friction, and reduce false negatives that translate into direct fraud losses.
-          The work combines time aware validation, cost sensitive evaluation, and operational AI governance suitable for regulated environments.
+          CyberAntifraud is my applied PhD hub at NOVA IMS, focused on fraud detection in merchant acquiring.
+          I work at the intersection of fraud analytics, deep learning, and operational delivery.
+          The goal is simple. Reduce false positives without losing fraud capture, and reduce false negatives without breaking governance.
         </p>
 
-        <div class="btnrow">
-          <a class="btn" href="#outputs">View papers and outputs</a>
-          <a class="btn secondary" href="#protocol">View protocol</a>
+        <div class="callout" role="note" aria-label="Credibility statement">
+          <strong>Positioning</strong>
+          <div class="small">
+            This hub publishes protocols, templates, and reproducible artefacts.
+            No sensitive operational data is disclosed. Public examples use synthetic or anonymised aggregates.
+          </div>
+        </div>
+
+        <div class="btnrow" style="margin-top:1rem">
+          <a class="btn" href="#offer">What I offer</a>
+          <a class="btn secondary" href="#outputs">Papers and outputs</a>
+          <a class="btn secondary" href="#protocol">Evaluation protocol</a>
         </div>
 
         <div class="blueprintWrap" aria-label="CyberAntifraud visual concept">
           <div class="blueprint" aria-label="Research schematic" role="img">
-            <div class="blueprintBadge">Research schematic</div>
+            <div class="blueprintBadge">Decision, cost, time, evidence</div>
 
             <svg viewBox="0 0 600 600" class="bpSvg" aria-hidden="true">
               <defs>
-                <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.35"></stop>
-                  <stop offset="70%" stop-color="#22d3ee" stop-opacity="0.08"></stop>
+                <radialGradient id="g" cx="50%" cy="50%" r="55%">
+                  <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.22"></stop>
+                  <stop offset="65%" stop-color="#22d3ee" stop-opacity="0.06"></stop>
                   <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"></stop>
                 </radialGradient>
+                <filter id="soft">
+                  <feGaussianBlur stdDeviation="0.6"></feGaussianBlur>
+                </filter>
               </defs>
 
-              <circle cx="300" cy="300" r="220" fill="none" stroke="#22d3ee" stroke-width="2" opacity="0.55"></circle>
-              <circle cx="300" cy="300" r="160" fill="none" stroke="#0ea5e9" stroke-width="1.6" opacity="0.65"></circle>
-              <circle cx="300" cy="300" r="90" fill="url(#coreGlow)"></circle>
+              <circle cx="300" cy="300" r="250" fill="none" stroke="#22d3ee" stroke-width="1.6" opacity="0.35"></circle>
 
-              <circle cx="300" cy="300" r="48" fill="none" stroke="#e5eefc" stroke-width="2"></circle>
+              <g opacity="0.55">
+                <line x1="300" y1="44" x2="300" y2="64" stroke="#e5eefc" stroke-width="1"></line>
+                <line x1="300" y1="536" x2="300" y2="556" stroke="#e5eefc" stroke-width="1"></line>
+                <line x1="44" y1="300" x2="64" y2="300" stroke="#e5eefc" stroke-width="1"></line>
+                <line x1="536" y1="300" x2="556" y2="300" stroke="#e5eefc" stroke-width="1"></line>
 
-              <line x1="300" y1="60" x2="300" y2="140" stroke="#e5eefc" stroke-width="1"></line>
-              <line x1="300" y1="460" x2="300" y2="540" stroke="#e5eefc" stroke-width="1"></line>
-              <line x1="60" y1="300" x2="140" y2="300" stroke="#e5eefc" stroke-width="1"></line>
-              <line x1="460" y1="300" x2="540" y2="300" stroke="#e5eefc" stroke-width="1"></line>
+                <line x1="120" y1="120" x2="134" y2="134" stroke="#e5eefc" stroke-width="1"></line>
+                <line x1="480" y1="120" x2="466" y2="134" stroke="#e5eefc" stroke-width="1"></line>
+                <line x1="120" y1="480" x2="134" y2="466" stroke="#e5eefc" stroke-width="1"></line>
+                <line x1="480" y1="480" x2="466" y2="466" stroke="#e5eefc" stroke-width="1"></line>
+              </g>
 
-              <circle cx="300" cy="140" r="6" fill="#e5eefc"></circle>
-              <circle cx="300" cy="460" r="6" fill="#e5eefc"></circle>
-              <circle cx="140" cy="300" r="6" fill="#e5eefc"></circle>
-              <circle cx="460" cy="300" r="6" fill="#e5eefc"></circle>
+              <circle cx="300" cy="300" r="180" fill="none" stroke="#0ea5e9" stroke-width="1.4" opacity="0.45"></circle>
+              <circle cx="300" cy="300" r="120" fill="none" stroke="#22d3ee" stroke-width="1.2" opacity="0.45"></circle>
 
-              <path d="M300 140 C360 200 360 400 300 460" fill="none" stroke="#22d3ee" stroke-width="1" opacity="0.8"></path>
-              <path d="M300 140 C240 200 240 400 300 460" fill="none" stroke="#22d3ee" stroke-width="1" opacity="0.8"></path>
+              <circle cx="300" cy="300" r="120" fill="url(#g)"></circle>
+
+              <g opacity="0.35">
+                <line x1="300" y1="80" x2="300" y2="520" stroke="#e5eefc" stroke-width="1"></line>
+                <line x1="80" y1="300" x2="520" y2="300" stroke="#e5eefc" stroke-width="1"></line>
+              </g>
+
+              <g filter="url(#soft)">
+                <circle cx="300" cy="300" r="52" fill="none" stroke="#e5eefc" stroke-width="2" opacity="0.9"></circle>
+                <path d="M300 248 L300 352" stroke="#e5eefc" stroke-width="2" opacity="0.7"></path>
+                <path d="M278 300 l10 10 l22 -26" fill="none" stroke="#22d3ee" stroke-width="2.4" opacity="0.9"></path>
+                <path d="M315 286 l24 24" stroke="#0ea5e9" stroke-width="2.4" opacity="0.9"></path>
+                <path d="M339 286 l-24 24" stroke="#0ea5e9" stroke-width="2.4" opacity="0.9"></path>
+              </g>
+
+              <g opacity="0.95">
+                <line x1="300" y1="120" x2="300" y2="248" stroke="#22d3ee" stroke-width="1.2" opacity="0.7"></line>
+                <circle cx="300" cy="120" r="18" fill="none" stroke="#e5eefc" stroke-width="1.6"></circle>
+                <path d="M288 120 C294 108 306 108 312 120 C306 132 294 132 288 120 Z"
+                      fill="none" stroke="#e5eefc" stroke-width="1.2" opacity="0.9"></path>
+                <circle cx="300" cy="120" r="3.2" fill="#22d3ee" opacity="0.9"></circle>
+              </g>
+
+              <g opacity="0.95">
+                <line x1="480" y1="300" x2="352" y2="300" stroke="#22d3ee" stroke-width="1.2" opacity="0.7"></line>
+                <circle cx="480" cy="300" r="18" fill="none" stroke="#e5eefc" stroke-width="1.6"></circle>
+                <rect x="468" y="292" width="10" height="10" rx="2" stroke="#e5eefc" fill="none" stroke-width="1.2"></rect>
+                <path d="M478 297 L492 297" stroke="#e5eefc" stroke-width="1.2"></path>
+                <rect x="492" y="292" width="10" height="10" rx="2" stroke="#e5eefc" fill="none" stroke-width="1.2"></rect>
+              </g>
+
+              <g opacity="0.95">
+                <line x1="300" y1="480" x2="300" y2="352" stroke="#22d3ee" stroke-width="1.2" opacity="0.7"></line>
+                <circle cx="300" cy="480" r="18" fill="none" stroke="#e5eefc" stroke-width="1.6"></circle>
+                <path d="M290 488 C296 470 308 492 314 474"
+                      fill="none" stroke="#e5eefc" stroke-width="1.2" opacity="0.9"></path>
+                <circle cx="306" cy="478" r="3.2" fill="#0ea5e9" opacity="0.9"></circle>
+              </g>
+
+              <g opacity="0.95">
+                <line x1="120" y1="300" x2="248" y2="300" stroke="#22d3ee" stroke-width="1.2" opacity="0.7"></line>
+                <circle cx="120" cy="300" r="18" fill="none" stroke="#e5eefc" stroke-width="1.6"></circle>
+                <path d="M112 294 h16 M112 300 h16 M112 306 h16"
+                      stroke="#e5eefc" stroke-width="1.2" opacity="0.9"></path>
+              </g>
+
+              <path d="M300 180 C360 220 360 380 300 420" fill="none" stroke="#22d3ee" stroke-width="1" opacity="0.35"></path>
+              <path d="M300 180 C240 220 240 380 300 420" fill="none" stroke="#22d3ee" stroke-width="1" opacity="0.35"></path>
+
+              <circle cx="430" cy="130" r="6" fill="none" stroke="#e5eefc" stroke-width="1.2" opacity="0.85"></circle>
+              <path d="M424 130 C430 124 436 124 442 130" fill="none" stroke="#0ea5e9" stroke-width="1.2" opacity="0.9"></path>
             </svg>
           </div>
 
@@ -383,6 +453,52 @@
       </div>
     </section>
 
+    <section id="offer">
+      <div class="container">
+        <h2>Offer for fraud teams</h2>
+        <div class="grid">
+          <div class="card" style="grid-column:span 6;">
+            <h3>What I can deliver</h3>
+            <ul class="list">
+              <li>Time aware evaluation protocol, rolling windows, leakage controls, reproducible reporting.</li>
+              <li>Cost model and threshold policy: net benefit curves, friction budget, capacity constraints.</li>
+              <li>Model benchmarking: strong baselines first, deep learning only when it wins under temporal backtests.</li>
+              <li>Governance pack: model cards, release gates, monitoring plan, rollback triggers, audit evidence.</li>
+            </ul>
+            <p class="small" style="margin-top:.75rem">
+              Practical scope. Acquiring fraud, card present and e-commerce. Design for regulated environments.
+            </p>
+          </div>
+
+          <div class="card" style="grid-column:span 6;">
+            <h3>Engagement modes</h3>
+            <ul class="list">
+              <li>Advisory review of your current stack and evaluation practice. Findings, risks, concrete fixes.</li>
+              <li>Hands on build of the evaluation harness and governance templates, ready for production use.</li>
+              <li>Benchmark sprint: baseline suite, temporal CV, cost curves, recommendation with evidence.</li>
+              <li>Enablement: train analysts and engineers to run the pipeline and keep it honest under drift.</li>
+            </ul>
+            <p class="small" style="margin-top:.75rem">
+              You keep ownership. I deliver the method, artefacts, and evidence trail.
+            </p>
+          </div>
+
+          <div class="card" style="grid-column:span 12;">
+            <h3>Credibility signals</h3>
+            <span class="pill">PhD at NOVA IMS</span>
+            <span class="pill">Acquiring domain focus</span>
+            <span class="pill">Time aware validation</span>
+            <span class="pill">Cost sensitive evaluation</span>
+            <span class="pill">Audit ready governance</span>
+            <span class="pill">Reproducible artefacts</span>
+            <p class="small" style="margin-top:.65rem">
+              This site is the public face of the method. Private engagements remain private. Nothing sensitive is published here.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="research">
       <div class="container">
         <h2>Research focus</h2>
@@ -390,10 +506,10 @@
           <div class="card" style="grid-column:span 7;">
             <h3>Research questions</h3>
             <ul class="list">
-              <li>How can we reduce false positives while preserving or improving fraud capture, under strict time aware validation?</li>
+              <li>How can we reduce false positives while preserving or improving fraud capture under strict time aware validation?</li>
               <li>How should we evaluate models when the real target is net benefit, not accuracy?</li>
               <li>How can we detect and control drift in acquiring, where merchant and attacker behaviour evolves continuously?</li>
-              <li>How can governance, auditability and human oversight be operationalised without reducing performance?</li>
+              <li>How can governance, auditability, and human oversight be operationalised without reducing performance?</li>
             </ul>
             <p class="small" style="margin-top:.75rem">
               Scope. Card present and e-commerce acquiring. Merchant context. Behavioural signals. Cost aware decision policies.
@@ -476,7 +592,7 @@
           <div class="card" style="grid-column:span 6;">
             <h3>Operational explainability</h3>
             <p>
-              Explainability is treated as an operational instrument. The goal is to enable analysts, risk teams and auditors to understand why a decision occurred and how stable that reason is under drift.
+              Explainability is treated as an operational instrument. The goal is to enable analysts, risk teams, and auditors to understand why a decision occurred and how stable that reason is under drift.
             </p>
             <p class="small">
               Policy. <a href="privacy.html">Privacy and data disclosure</a>
@@ -488,52 +604,6 @@
             <p class="small">
               No production secrets, sensitive rules, merchant identities, or personal data are published. Public materials use synthetic data or anonymised aggregates. Any public robustness demonstrations are designed to inform defence, not enable abuse.
             </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="ai-governance">
-      <div class="container">
-        <h2>AI governance framework for acquiring fraud</h2>
-        <div class="grid">
-          <div class="card" style="grid-column:span 6;">
-            <h3>Risk register updates</h3>
-            <ul class="list">
-              <li>AI assisted social engineering and merchant onboarding fraud.</li>
-              <li>Deepfake voice and video fraud in call centres and identity checks.</li>
-              <li>Prompt injection and data poisoning in AI enabled workflows.</li>
-              <li>Model leakage, misuse, and shadow AI usage by internal teams.</li>
-            </ul>
-          </div>
-
-          <div class="card" style="grid-column:span 6;">
-            <h3>Control enhancements</h3>
-            <ul class="list">
-              <li>Monitoring for drift, calibration decay, and adversarial shifts.</li>
-              <li>Secure AI integration. Access control, logging, input output filtering.</li>
-              <li>Model validation. Bias tests, robustness tests, release gates.</li>
-              <li>Human in the loop for defined high impact thresholds.</li>
-            </ul>
-          </div>
-
-          <div class="card" style="grid-column:span 6;">
-            <h3>AI usage policies</h3>
-            <ul class="list">
-              <li>Acceptable use and prohibited data categories in prompts.</li>
-              <li>Ownership and accountability for AI outputs and decisions.</li>
-              <li>Third party AI risk management and vendor controls.</li>
-            </ul>
-          </div>
-
-          <div class="card" style="grid-column:span 6;">
-            <h3>Framework alignment</h3>
-            <ul class="list">
-              <li>ISO 27001. AI as an information asset with security controls.</li>
-              <li>NIST RMF and AI RMF. Risk assessment and AI specific controls.</li>
-              <li>ISO 42001. AI management system across the lifecycle including impact assessment and monitoring.</li>
-              <li>SOC 2. Evidence of controls, logging, and continuous monitoring.</li>
-            </ul>
           </div>
         </div>
       </div>
@@ -567,7 +637,7 @@
                 <td><em>Draft coming soon</em></td>
               </tr>
               <tr>
-                <td><strong>Fraud attack simulation</strong> LLM robustness harness</td>
+                <td><strong>Fraud attack simulation</strong> Robustness harness</td>
                 <td><span class="status warn">Planned</span></td>
                 <td>Attack scenarios, canary tests, evaluation harness</td>
                 <td><em>GitHub link coming soon</em></td>
@@ -578,38 +648,15 @@
       </div>
     </section>
 
-    <section id="repro">
-      <div class="container">
-        <h2>Reproducibility</h2>
-        <div class="grid">
-          <div class="card" style="grid-column:span 6;">
-            <h3>Open artefacts</h3>
-            <ul class="list">
-              <li>Evaluation protocol and templates. Public PDFs.</li>
-              <li>Future repositories will include synthetic data and evaluation harness.</li>
-              <li>Experiment tracking references will be provided as publishable snapshots.</li>
-            </ul>
-          </div>
-          <div class="card" style="grid-column:span 6;">
-            <h3>Release gates</h3>
-            <ul class="list">
-              <li>Temporal backtests across multiple windows.</li>
-              <li>Robustness tests and drift canaries.</li>
-              <li>Model card completion and sign off.</li>
-              <li>Documented threshold policy under constraints.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="contact">
       <div class="container grid">
         <div class="card" style="grid-column:span 7;">
           <h2>Contact</h2>
           <p><strong>CyberAntifraud</strong> • Lisbon, Portugal</p>
           <p>Email. <a href="mailto:hello@cyberantifraud.com">hello@cyberantifraud.com</a></p>
-          <p class="small">Academic affiliation. NOVA Information Management School. Independent academic website.</p>
+          <p class="small">
+            For advisory or applied engagements, send a short description of your acquiring context, your current evaluation split strategy, and the main pain. False positives, false negatives, drift, or governance.
+          </p>
         </div>
         <div class="card" style="grid-column:span 5;">
           <h2>Policies</h2>
