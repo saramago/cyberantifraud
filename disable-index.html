@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CyberAntifraud • Acquiring Fraud Detection • PhD + Applied Delivery</title>
+  <meta name="description" content="Applied PhD hub for acquiring fraud detection. Deep learning with time aware validation, cost sensitive evaluation, and operational AI governance. Advisory and applied support for fraud teams." />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="canonical" href="https://cyberantifraud.com/" />
+
+  <meta property="og:title" content="CyberAntifraud • Acquiring Fraud Detection • PhD + Applied Delivery" />
+  <meta property="og:description" content="Applied PhD hub for acquiring fraud detection. Deep learning, temporal validation, cost sensitive metrics, drift control, and AI governance. Advisory and applied support for fraud teams." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cyberantifraud.com/" />
+  <meta property="og:image" content="https://cyberantifraud.com/assets/og-cyberantifraud.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CyberAntifraud • Acquiring Fraud Detection • PhD + Applied Delivery" />
+  <meta name="twitter:description" content="Applied PhD hub for acquiring fraud detection. Deep learning, temporal validation, cost sensitive metrics, drift control, and AI governance." />
+  <meta name="twitter:image" content="https://cyberantifraud.com/assets/og-cyberantifraud.png" />
+
+  <link rel="icon" href="assets/favicon.png" />
+
+  <style>
+    :root{
+      --bg:#ffffff; --fg:#0f172a; --sub:#334155; --muted:#64748b;
+      --brand:#0ea5e9; --brand2:#22d3ee; --line:#e2e8f0;
+      --card:#f8fafc; --accent:#e2f3ff; --ok:#16a34a; --warn:#f59e0b;
+      --maxw:980px;
+      --heroImg: url("assets/hero-cyberantifraud.png");
+    }
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#0b1220; --fg:#e5eefc; --sub:#c6d0e5; --muted:#96a2bd; --line:#18243a; --card:#0f172a; --accent:#07233a;}
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Cantarell,'Helvetica Neue',Arial,sans-serif;color:var(--fg);background:var(--bg)}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:var(--maxw);margin:auto;padding:0 1rem}
+    .skip{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip:focus{left:1rem;top:1rem;width:auto;height:auto;background:var(--accent);color:var(--fg);padding:.5rem .75rem;border-radius:.5rem;z-index:1000}
+
+    header{position:sticky;top:0;background:rgba(255,255,255,.84);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line);z-index:999}
+    @media (prefers-color-scheme: dark){ header{background:rgba(11,18,32,.84)}}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.75rem 0}
+    .brand{display:flex;align-items:center;gap:.75rem;font-weight:850;letter-spacing:.2px}
+    .logo{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--brand),var(--brand2));display:inline-block}
+
+    nav ul{display:flex;flex-wrap:wrap;gap:.35rem;margin:0;padding:0;list-style:none;align-items:center}
+    nav a{padding:.35rem .55rem;border-radius:.55rem;color:var(--fg)}
+    nav a:hover{background:var(--accent);text-decoration:none}
+
+    .navRight{display:flex;align-items:center;gap:.45rem}
+    .navLink{
+      display:inline-block;
+      padding:.35rem .6rem;
+      border-radius:.65rem;
+      border:1px solid var(--line);
+      background:transparent;
+      color:var(--fg);
+      white-space:nowrap;
+    }
+    .navLink:hover{background:var(--accent);text-decoration:none}
+    .navLink.primary{
+      background:var(--fg);
+      color:var(--bg);
+    }
+
+    section{padding:2.25rem 0;border-bottom:1px solid var(--line)}
+    .hero{
+      padding:3.1rem 0 2.25rem;
+      border-bottom:1px solid var(--line);
+      background:
+        radial-gradient(1200px 420px at 50% -10%, var(--accent), transparent 60%),
+        linear-gradient(180deg, rgba(0,0,0,.04), transparent 30%),
+        var(--bg);
+    }
+    .hero h1{font-size:clamp(28px,4vw,46px);line-height:1.12;margin:.25rem 0 .6rem}
+    .hero p{max-width:860px;color:var(--sub);margin:.45rem 0 1.1rem}
+    .tags{display:flex;flex-wrap:wrap;gap:.5rem;margin:.25rem 0 1rem}
+    .tag{display:inline-block;font-size:.82rem;background:var(--card);border:1px solid var(--line);padding:.25rem .6rem;border-radius:999px;color:var(--muted)}
+
+    h2{font-size:clamp(22px,2.5vw,30px);margin:.25rem 0 1rem}
+    h3{font-size:1.05rem;margin:0 0 .35rem}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem}
+    .small{font-size:.92rem;color:var(--muted)}
+    .list{margin:.25rem 0 0 0;padding:0 0 0 1.1rem}
+
+    .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+    .kpi{padding:1rem;border:1px solid var(--line);border-radius:12px;background:var(--bg)}
+    .kpi .num{font-weight:900;font-size:1.45rem}
+
+    .btnrow{display:flex;gap:.6rem;flex-wrap:wrap}
+    .btn{display:inline-block;background:var(--fg);color:var(--bg);padding:.55rem .9rem;border-radius:10px;border:1px solid var(--line)}
+    .btn.secondary{background:transparent;color:var(--fg)}
+    .btn:hover{opacity:.92;text-decoration:none}
+
+    .pill{display:inline-block;border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:.25rem .6rem;color:var(--muted);font-size:.82rem;margin:.15rem .25rem .15rem 0}
+    .table{width:100%;border-collapse:collapse}
+    .table th,.table td{border-bottom:1px solid var(--line);padding:.6rem .5rem;text-align:left;vertical-align:top}
+    .table th{font-size:.9rem;color:var(--muted)}
+
+    .status{display:inline-block;font-size:.82rem;border:1px solid var(--line);border-radius:999px;padding:.15rem .55rem;background:var(--bg);color:var(--muted)}
+    .status.ok{color:var(--ok)}
+    .status.warn{color:var(--warn)}
+
+    .callout{
+      border:1px solid var(--line);
+      background:linear-gradient(135deg, rgba(14,165,233,.08), rgba(34,211,238,.06));
+      border-radius:14px;
+      padding:.9rem 1rem;
+      margin:.9rem 0 0 0;
+    }
+    .callout strong{color:var(--fg)}
+    .callout .small{margin:.25rem 0 0 0}
+
+    .footer{padding:2rem 0;background:var(--card)}
+    @media (max-width: 980px){
+      header nav{display:none}
+      .navRight{display:none}
+    }
+
+    .blueprintWrap{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:1rem;
+      align-items:stretch;
+      margin-top:1.1rem;
+    }
+    @media (max-width: 900px){
+      .blueprintWrap{grid-template-columns:1fr}
+    }
+    .blueprint{
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,0)),
+        var(--heroImg);
+      background-size: cover;
+      background-position: center;
+      min-height: 420px;
+      position:relative;
+      overflow:hidden;
+    }
+    @media (prefers-color-scheme: dark){
+      .blueprint{
+        background:
+          linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.05)),
+          var(--heroImg);
+        background-size: cover;
+        background-position: center;
+      }
+    }
+    .blueprint::after{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        radial-gradient(600px 260px at 50% 35%, rgba(34,211,238,.20), transparent 65%),
+        radial-gradient(520px 260px at 50% 70%, rgba(14,165,233,.12), transparent 70%);
+      pointer-events:none;
+    }
+    .blueprintBadge{
+      position:absolute;
+      top:14px; right:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.78);
+      padding:.35rem .6rem;
+      border-radius:999px;
+      font-size:.82rem;
+      color:var(--muted);
+      backdrop-filter: blur(8px);
+      z-index:3;
+    }
+    @media (prefers-color-scheme: dark){
+      .blueprintBadge{background:rgba(11,18,32,.72)}
+    }
+    .bpSvg{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      display:block;
+      pointer-events:none;
+      z-index:2;
+      opacity:.95;
+    }
+
+    .modules{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:1rem;
+    }
+    .moduleCard{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:1rem;
+      position:relative;
+      overflow:hidden;
+      min-height: 128px;
+    }
+    .moduleHead{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:.75rem;
+      margin-bottom:.35rem;
+    }
+    .moduleTitle{
+      font-weight:850;
+      letter-spacing:.2px;
+      margin:0;
+      line-height:1.15;
+    }
+    .moduleTag{
+      font-size:.75rem;
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:.18rem .5rem;
+      color:var(--muted);
+      background:var(--bg);
+      white-space:nowrap;
+      height:fit-content;
+    }
+    .schem{
+      margin-top:.55rem;
+      border-radius:12px;
+      border:1px dashed var(--line);
+      background:linear-gradient(135deg, rgba(14,165,233,.08), rgba(34,211,238,.05));
+      padding:.55rem;
+    }
+    .schem svg{
+      width:100%;
+      height:54px;
+      display:block;
+    }
+    .schem line, .schem path, .schem circle, .schem rect{
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.4;
+      opacity:.9;
+    }
+    .schem .thin{stroke-width:1}
+    .schem .fill{fill: currentColor; opacity:.10; stroke: none;}
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Paulo Saramago",
+    "url":"https://cyberantifraud.com/",
+    "jobTitle":"Doctoral Researcher (Acquiring Fraud Detection)",
+    "affiliation":{"@type":"CollegeOrUniversity","name":"NOVA IMS"},
+    "knowsAbout":["Fraud detection","Merchant acquiring","Deep learning","Time series validation","Cost sensitive learning","Model risk management","AI governance"],
+    "email":"mailto:psaramago@novaims.unl.pt",
+    "sameAs":[
+      "https://www.linkedin.com/in/saramago/"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <span class="logo" aria-hidden="true"></span>
+        <span>CyberAntifraud</span>
+      </div>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#offer">Offer</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#protocol">Protocol</a></li>
+          <li><a href="#governance">Governance</a></li>
+          <li><a href="#outputs">Outputs</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="navRight" aria-label="External links">
+        <a class="navLink" href="https://www.linkedin.com/in/saramago/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="navLink primary" href="mailto:psaramago@novaims.unl.pt">Email</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="hero">
+      <div class="container">
+        <div class="tags">
+          <span class="tag">Acquiring fraud</span>
+          <span class="tag">Deep learning</span>
+          <span class="tag">Temporal validation</span>
+          <span class="tag">Cost sensitive metrics</span>
+          <span class="tag">Operational governance</span>
+        </div>
+
+        <h1>Acquiring fraud detection. Less friction. Less loss. Governed AI.</h1>
+
+        <p>
+          CyberAntifraud is my applied PhD hub at NOVA IMS, focused on fraud detection in merchant acquiring.
+          I work at the intersection of fraud analytics, deep learning, and operational delivery.
+          The goal is simple. Reduce false positives without losing fraud capture, and reduce false negatives without breaking governance.
+        </p>
+
+        <div class="callout" role="note" aria-label="Credibility statement">
+          <strong>Positioning</strong>
+          <div class="small">
+            This hub publishes protocols, templates, and reproducible artefacts.
+            No sensitive operational data is disclosed. Public examples use synthetic or anonymised aggregates.
+          </div>
+        </div>
+
+        <div class="btnrow" style="margin-top:1rem">
+          <a class="btn" href="#offer">What I offer</a>
+          <a class="btn secondary" href="#outputs">Papers and outputs</a>
+          <a class="btn secondary" href="#protocol">Evaluation protocol</a>
+          <a class="btn secondary" href="https://www.linkedin.com/in/saramago/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+
+        <div class="blueprintWrap" aria-label="CyberAntifraud visual concept">
+          <div class="blueprint" aria-label="Research schematic" role="img">
+            <div class="blueprintBadge">Decision, cost, time, evidence</div>
+
+            <svg viewBox="0 0 600 600" class="bpSvg" aria-hidden="true">
+              <defs>
+                <radialGradient id="g" cx="50%" cy="50%" r="55%">
+                  <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.22"></stop>
+                  <stop offset="65%" stop-color="#22d3ee" stop-opacity="0.06"></stop>
+                  <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"></stop>
+                </radialGradient>
+                <filter id="soft">
+                  <feGaussianBlur stdDeviation="0.6"></feGaussianBlur>
+                </filter>
+              </defs>
+
+              <circle cx="300" cy="300" r="250" fill="none" stroke="#22d3ee" stroke-width="1.6" opacity="0.35"></circle>
+
+              <g opacity="0.55">
+                <line x1="300" y1="44" x2="300" y2="64" stroke="#e5eefc" stroke-width="1"></line>
+                <line x1="300" y1="536" x2="300" y2="556" stroke="#e5eefc" stroke-width="1"></line>
+                <line x1="44" y1="300" x2="64" y2="300" stroke="#e5eefc" stroke-width="1"></line>
+                <line x1="536" y1="300" x2="556" y2="300" stroke="#e5eefc" stroke-width="1"></line>
+
+                <line x1="120" y1="120" x2="134" y2="134" stroke="#e5eefc" stroke-width="1"></line>
+                <line x1="480" y1="120" x2="466" y2="134" stroke="#e5eefc" stroke-width="1"></line>
+                <line x1="120" y1="480" x2="134" y2="466" stroke="#e5eefc" stroke-width="1"></line>
+                <line x1="480" y1="480" x2="466" y2="466" stroke="#e5eefc" stroke-width="1"></line>
+              </g>
+
+              <circle cx="300" cy="300" r="180" fill="none" stroke="#0ea5e9" stroke-width="1.4" opacity="0.45"></circle>
+              <circle cx="300" cy="300" r="120" fill="none" stroke="#22d3ee" stroke-width="1.2" opacity="0.45"></circle>
+
+              <circle cx="300" cy="300" r="120" fill="url(#g)"></circle>
+
+              <g opacity="0.35">
+                <line x1="300" y1="80" x2="300" y2="520" stroke="#e5eefc" stroke-width="1"></line>
+                <line x1="80" y1="300" x2="520" y2="300" stroke="#e5eefc" stroke-width="1"></line>
+              </g>
+
+              <g filter="url(#soft)">
+                <circle cx="300" cy="300" r="52" fill="none" stroke="#e5eefc" stroke-width="2" opacity="0.9"></circle>
+                <path d="M300 248 L300 352" stroke="#e5eefc" stroke-width="2" opacity="0.7"></path>
+                <path d="M278 300 l10 10 l22 -26" fill="none" stroke="#22d3ee" stroke-width="2.4" opacity="0.9"></path>
+                <path d="M315 286 l24 24" stroke="#0ea5e9" stroke-width="2.4" opacity="0.9"></path>
+                <path d="M339 286 l-24 24" stroke="#0ea5e9" stroke-width="2.4" opacity="0.9"></path>
+              </g>
+
+              <g opacity="0.95">
+                <line x1="300" y1="120" x2="300" y2="248" stroke="#22d3ee" stroke-width="1.2" opacity="0.7"></line>
+                <circle cx="300" cy="120" r="18" fill="none" stroke="#e5eefc" stroke-width="1.6"></circle>
+                <path d="M288 120 C294 108 306 108 312 120 C306 132 294 132 288 120 Z"
+                      fill="none" stroke="#e5eefc" stroke-width="1.2" opacity="0.9"></path>
+                <circle cx="300" cy="120" r="3.2" fill="#22d3ee" opacity="0.9"></circle>
+              </g>
+
+              <g opacity="0.95">
+                <line x1="480" y1="300" x2="352" y2="300" stroke="#22d3ee" stroke-width="1.2" opacity="0.7"></line>
+                <circle cx="480" cy="300" r="18" fill="none" stroke="#e5eefc" stroke-width="1.6"></circle>
+                <rect x="468" y="292" width="10" height="10" rx="2" stroke="#e5eefc" fill="none" stroke-width="1.2"></rect>
+                <path d="M478 297 L492 297" stroke="#e5eefc" stroke-width="1.2"></path>
+                <rect x="492" y="292" width="10" height="10" rx="2" stroke="#e5eefc" fill="none" stroke-width="1.2"></rect>
+              </g>
+
+              <g opacity="0.95">
+                <line x1="300" y1="480" x2="300" y2="352" stroke="#22d3ee" stroke-width="1.2" opacity="0.7"></line>
+                <circle cx="300" cy="480" r="18" fill="none" stroke="#e5eefc" stroke-width="1.6"></circle>
+                <path d="M290 488 C296 470 308 492 314 474"
+                      fill="none" stroke="#e5eefc" stroke-width="1.2" opacity="0.9"></path>
+                <circle cx="306" cy="478" r="3.2" fill="#0ea5e9" opacity="0.9"></circle>
+              </g>
+
+              <g opacity="0.95">
+                <line x1="120" y1="300" x2="248" y2="300" stroke="#22d3ee" stroke-width="1.2" opacity="0.7"></line>
+                <circle cx="120" cy="300" r="18" fill="none" stroke="#e5eefc" stroke-width="1.6"></circle>
+                <path d="M112 294 h16 M112 300 h16 M112 306 h16"
+                      stroke="#e5eefc" stroke-width="1.2" opacity="0.9"></path>
+              </g>
+
+              <path d="M300 180 C360 220 360 380 300 420" fill="none" stroke="#22d3ee" stroke-width="1" opacity="0.35"></path>
+              <path d="M300 180 C240 220 240 380 300 420" fill="none" stroke="#22d3ee" stroke-width="1" opacity="0.35"></path>
+
+              <circle cx="430" cy="130" r="6" fill="none" stroke="#e5eefc" stroke-width="1.2" opacity="0.85"></circle>
+              <path d="M424 130 C430 124 436 124 442 130" fill="none" stroke="#0ea5e9" stroke-width="1.2" opacity="0.9"></path>
+            </svg>
+          </div>
+
+          <div class="modules" aria-label="Core modules">
+            <div class="moduleCard">
+              <div class="moduleHead">
+                <h3 class="moduleTitle">Temporal Integrity Gate</h3>
+                <span class="moduleTag">time aware</span>
+              </div>
+              <div class="small">Blocked splits, rolling windows, leakage control, drift stress testing.</div>
+              <div class="schem" aria-hidden="true">
+                <svg viewBox="0 0 420 54" preserveAspectRatio="none">
+                  <line x1="16" y1="28" x2="404" y2="28"></line>
+                  <circle cx="70" cy="28" r="7"></circle>
+                  <circle cx="150" cy="28" r="7"></circle>
+                  <circle cx="230" cy="28" r="7"></circle>
+                  <circle cx="310" cy="28" r="7"></circle>
+                  <path class="thin" d="M70,28 C95,10 125,10 150,28"></path>
+                  <path class="thin" d="M150,28 C175,46 205,46 230,28"></path>
+                  <path class="thin" d="M230,28 C255,10 285,10 310,28"></path>
+                  <rect class="fill" x="40" y="14" width="60" height="28" rx="8"></rect>
+                </svg>
+              </div>
+            </div>
+
+            <div class="moduleCard">
+              <div class="moduleHead">
+                <h3 class="moduleTitle">Cost and Friction Engine</h3>
+                <span class="moduleTag">net benefit</span>
+              </div>
+              <div class="small">Cost curves, threshold policy, friction budget, operational capacity constraints.</div>
+              <div class="schem" aria-hidden="true">
+                <svg viewBox="0 0 420 54" preserveAspectRatio="none">
+                  <path d="M18,40 C70,10 140,48 200,22 C260,-2 330,40 404,14"></path>
+                  <line class="thin" x1="18" y1="40" x2="18" y2="14"></line>
+                  <line class="thin" x1="18" y1="40" x2="120" y2="40"></line>
+                  <circle cx="200" cy="22" r="7"></circle>
+                  <path class="thin" d="M200,22 L200,46"></path>
+                  <rect class="fill" x="188" y="6" width="24" height="32" rx="10"></rect>
+                </svg>
+              </div>
+            </div>
+
+            <div class="moduleCard">
+              <div class="moduleHead">
+                <h3 class="moduleTitle">Governance Trace Layer</h3>
+                <span class="moduleTag">audit ready</span>
+              </div>
+              <div class="small">Model cards, release gates, monitoring evidence, rollback triggers, oversight.</div>
+              <div class="schem" aria-hidden="true">
+                <svg viewBox="0 0 420 54" preserveAspectRatio="none">
+                  <rect x="20" y="12" width="86" height="30" rx="10"></rect>
+                  <rect x="148" y="12" width="86" height="30" rx="10"></rect>
+                  <rect x="276" y="12" width="124" height="30" rx="10"></rect>
+                  <path class="thin" d="M106,27 L148,27"></path>
+                  <path class="thin" d="M234,27 L276,27"></path>
+                  <circle cx="106" cy="27" r="3"></circle>
+                  <circle cx="148" cy="27" r="3"></circle>
+                  <circle cx="234" cy="27" r="3"></circle>
+                  <circle cx="276" cy="27" r="3"></circle>
+                  <path class="thin" d="M308,18 L392,18"></path>
+                  <path class="thin" d="M308,27 L392,27"></path>
+                  <path class="thin" d="M308,36 L392,36"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="small" style="margin-top:1rem">
+          Data disclosure policy. No sensitive operational data is published. Public examples rely on synthetic or anonymised aggregates.
+        </p>
+      </div>
+    </section>
+
+    <section id="offer">
+      <div class="container">
+        <h2>Offer for fraud teams</h2>
+        <div class="grid">
+          <div class="card" style="grid-column:span 6;">
+            <h3>What I can deliver</h3>
+            <ul class="list">
+              <li>Time aware evaluation protocol, rolling windows, leakage controls, reproducible reporting.</li>
+              <li>Cost model and threshold policy: net benefit curves, friction budget, capacity constraints.</li>
+              <li>Model benchmarking: strong baselines first, deep learning only when it wins under temporal backtests.</li>
+              <li>Governance pack: model cards, release gates, monitoring plan, rollback triggers, audit evidence.</li>
+            </ul>
+            <p class="small" style="margin-top:.75rem">
+              Practical scope. Acquiring fraud, card present and e-commerce. Design for regulated environments.
+            </p>
+          </div>
+
+          <div class="card" style="grid-column:span 6;">
+            <h3>Engagement modes</h3>
+            <ul class="list">
+              <li>Advisory review of your current stack and evaluation practice. Findings, risks, concrete fixes.</li>
+              <li>Hands on build of the evaluation harness and governance templates, ready for production use.</li>
+              <li>Benchmark sprint: baseline suite, temporal CV, cost curves, recommendation with evidence.</li>
+              <li>Enablement: train analysts and engineers to run the pipeline and keep it honest under drift.</li>
+            </ul>
+            <p class="small" style="margin-top:.75rem">
+              You keep ownership. I deliver the method, artefacts, and evidence trail.
+            </p>
+          </div>
+
+          <div class="card" style="grid-column:span 12;">
+            <h3>Credibility signals</h3>
+            <span class="pill">PhD at NOVA IMS</span>
+            <span class="pill">Acquiring domain focus</span>
+            <span class="pill">Time aware validation</span>
+            <span class="pill">Cost sensitive evaluation</span>
+            <span class="pill">Audit ready governance</span>
+            <span class="pill">Reproducible artefacts</span>
+            <p class="small" style="margin-top:.65rem">
+              This site is the public face of the method. Private engagements remain private. Nothing sensitive is published here.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="container">
+        <h2>Research focus</h2>
+        <div class="grid">
+          <div class="card" style="grid-column:span 7;">
+            <h3>Research questions</h3>
+            <ul class="list">
+              <li>How can we reduce false positives while preserving or improving fraud capture under strict time aware validation?</li>
+              <li>How should we evaluate models when the real target is net benefit, not accuracy?</li>
+              <li>How can we detect and control drift in acquiring, where merchant and attacker behaviour evolves continuously?</li>
+              <li>How can governance, auditability, and human oversight be operationalised without reducing performance?</li>
+            </ul>
+            <p class="small" style="margin-top:.75rem">
+              Scope. Card present and e-commerce acquiring. Merchant context. Behavioural signals. Cost aware decision policies.
+            </p>
+          </div>
+
+          <div class="card" style="grid-column:span 5;">
+            <h3>Facts and figures</h3>
+            <div class="kpis">
+              <div class="kpi"><div class="num">1 TB</div><div class="small">Industry scale context</div></div>
+              <div class="kpi"><div class="num">3</div><div class="small">Target papers</div></div>
+              <div class="kpi"><div class="num">Q1</div><div class="small">Survey target</div></div>
+              <div class="kpi"><div class="num">Strict</div><div class="small">Time aware validation</div></div>
+            </div>
+          </div>
+
+          <div class="card" style="grid-column:span 12;">
+            <h3>Core outputs on this hub</h3>
+            <span class="pill">Evaluation protocol</span>
+            <span class="pill">Cost model note</span>
+            <span class="pill">Model card template</span>
+            <span class="pill">LLM attack simulation</span>
+            <span class="pill">Operational explainability</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="protocol">
+      <div class="container">
+        <h2>Protocol and templates</h2>
+        <div class="grid">
+          <div class="card" style="grid-column:span 6;">
+            <h3>Evaluation protocol</h3>
+            <p>
+              Fraud data is non stationary. Random splits are misleading. This work uses blocked time series validation and rolling windows to approximate production reality, quantify drift sensitivity, and prevent leakage.
+            </p>
+            <p class="small">
+              PDF. <a href="docs/CyberAntifraud_Evaluation_Protocol.pdf">Download</a>
+            </p>
+          </div>
+
+          <div class="card" style="grid-column:span 6;">
+            <h3>Cost model note</h3>
+            <p>
+              The primary KPI is expected net benefit. False positives create friction and operational cost. False negatives create direct loss. This note defines assumptions, constraints, and reporting requirements for threshold selection.
+            </p>
+            <p class="small">
+              PDF. <a href="docs/CyberAntifraud_Cost_Model_Note.pdf">Download</a>
+            </p>
+          </div>
+
+          <div class="card" style="grid-column:span 12;">
+            <h3>Model card template</h3>
+            <p>
+              Audit ready documentation. Model overview, data windows, temporal results, drift monitoring, governance sign off, and rollback criteria.
+            </p>
+            <p class="small">
+              PDF. <a href="docs/CyberAntifraud_Model_Card_Template.pdf">Download</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="governance">
+      <div class="container">
+        <h2>Governance and ethics</h2>
+        <div class="grid">
+          <div class="card" style="grid-column:span 6;">
+            <h3>Governance principles</h3>
+            <ul class="list">
+              <li>Data minimisation and explicit purpose limitation for anti fraud.</li>
+              <li>Documented lineage. Data version, features, training window, parameters.</li>
+              <li>Human oversight for high impact decisions with clear accountability.</li>
+              <li>Auditability by design. Logs, model cards, decision traceability.</li>
+            </ul>
+          </div>
+
+          <div class="card" style="grid-column:span 6;">
+            <h3>Operational explainability</h3>
+            <p>
+              Explainability is treated as an operational instrument. The goal is to enable analysts, risk teams, and auditors to understand why a decision occurred and how stable that reason is under drift.
+            </p>
+            <p class="small">
+              Policy. <a href="privacy.html">Privacy and data disclosure</a>
+            </p>
+          </div>
+
+          <div class="card" style="grid-column:span 12;">
+            <h3>Disclosure statement</h3>
+            <p class="small">
+              No production secrets, sensitive rules, merchant identities, or personal data are published. Public materials use synthetic data or anonymised aggregates. Any public robustness demonstrations are designed to inform defence, not enable abuse.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="outputs">
+      <div class="container">
+        <h2>Papers and outputs</h2>
+        <div class="card">
+          <table class="table" aria-label="Papers">
+            <thead>
+              <tr><th>Work</th><th>Status</th><th>Focus</th><th>Links</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Survey</strong> Deep learning for acquiring fraud detection</td>
+                <td><span class="status warn">In progress</span></td>
+                <td>SLR, metrics, temporal validation, robustness, governance</td>
+                <td><em>Preprint coming soon</em></td>
+              </tr>
+              <tr>
+                <td><strong>Methods</strong> Temporal CV and cost model</td>
+                <td><span class="status warn">Planned</span></td>
+                <td>Protocol, cost curves, drift control, baselines</td>
+                <td><em>Draft coming soon</em></td>
+              </tr>
+              <tr>
+                <td><strong>Results</strong> Models vs baselines on acquiring context</td>
+                <td><span class="status warn">Planned</span></td>
+                <td>Model families, operational trade offs, governance</td>
+                <td><em>Draft coming soon</em></td>
+              </tr>
+              <tr>
+                <td><strong>Fraud attack simulation</strong> Robustness harness</td>
+                <td><span class="status warn">Planned</span></td>
+                <td>Attack scenarios, canary tests, evaluation harness</td>
+                <td><em>GitHub link coming soon</em></td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="small" style="margin-top:.75rem">
+            If you want a fast view of my work, start with the protocol PDFs, then reach out by email with your constraints.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container grid">
+        <div class="card" style="grid-column:span 7;">
+          <h2>Contact</h2>
+          <p><strong>Paulo Saramago</strong> • Lisbon, Portugal</p>
+          <p>Academic email: <a href="mailto:psaramago@novaims.unl.pt">psaramago@novaims.unl.pt</a></p>
+          <p>LinkedIn: <a href="https://www.linkedin.com/in/saramago/" target="_blank" rel="noopener noreferrer">linkedin.com/in/saramago</a></p>
+          <p class="small">Alternative email: <a href="mailto:psaramago@gmail.com">psaramago@gmail.com</a></p>
+          <p class="small" style="margin-top:.65rem">
+            For academic collaboration or applied work, include: acquiring context (card present or e-commerce), your current validation split strategy, main pain (false positives, false negatives, drift, governance), and any constraints (latency, ops capacity, audit requirements).
+          </p>
+        </div>
+        <div class="card" style="grid-column:span 5;">
+          <h2>Policies</h2>
+          <p class="small">Privacy and data disclosure: <a href="privacy.html">Open</a></p>
+          <p class="small">Last updated: <span id="lastUpdated"></span></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container small">
+      <p><strong>CyberAntifraud</strong> © <span id="year"></span>. Independent academic site. No sensitive data disclosed.</p>
+      <p>
+        <a href="https://www.linkedin.com/in/saramago/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        · <a href="mailto:psaramago@novaims.unl.pt">Email</a>
+        · <a href="#content">Back to top</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('lastUpdated').textContent = new Date().toISOString().slice(0,10);
+  </script>
+</body>
+</html>
